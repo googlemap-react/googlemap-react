@@ -35,15 +35,13 @@ Currently, the context has two properties: `state` and `dispatch`. As the names
 suggest, `state` stores the context state, and `dispatch` is the reduce
 function.
 
-`state` has 4 properties:
+`state` has 3 properties:
 
 - `map`, which is a `google.maps.Map` instance.
 - `objects`, which is a `Map` storing all `google.maps.MVCObject` instances as
   `id`-`object` pairs
-- `service`, which is a `google.maps.places.PlaceService` instance. It will be
+- `places`, which is a `google.maps.places.PlaceService` instance. It will be
   automatically instantiated when `usingPlaces` is `true` in `MapBox`.
-- `searches`, which is a `Map` storing all `google.maps.places.SearchBox`
-  instances as `id`-`SearchBox` pairs
 
 > **[NOTE]** You should pay as much attention as you can to `id` when using this
 > package, if you want to manipulate Google Map objects directly.

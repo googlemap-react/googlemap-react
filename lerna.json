@@ -1,6 +1,6 @@
 {
   "version": "0.0.2",
-  "packages": ["packages/lib", "examples/*"],
+  "packages": ["packages/*", "examples/*"],
   "command": {
     "version": {
       "allowBranch": "master",
@@ -11,6 +11,5 @@
   },
   "ignoreChanges": ["**/__tests__/**", "**/*.md"],
   "npmClient": "yarn",
-  "npmClientArgs": ["--no-lockfile"],
   "useWorkspaces": true
 }

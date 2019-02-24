@@ -1,7 +1,6 @@
 #!/bin/sh
 
 yarn build:lib && \
-mv ./packages/lib/dist ./examples/CRA/src/lib/ && \
 cd examples/CRA && \
 cp .env.sample .env
 sed 's@YOUR GOOGLE MAP API KEY@'${GOOGLE_API_KEY}'@' -i .env

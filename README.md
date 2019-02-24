@@ -3,11 +3,11 @@
 [![npm package](https://img.shields.io/npm/v/@googlemap-react/core/latest.svg)](https://www.npmjs.com/package/@googlemap-react/core)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![codecov](https://codecov.io/gh/googlemap-react/googlemap-react/branch/master/graph/badge.svg)](https://codecov.io/gh/googlemap-react/googlemap-react)
-[![codebeat badge](https://codebeat.co/badges/e7a5b064-277b-496d-9528-6fb835eb6ad4)](https://codebeat.co/projects/github-com-googlemap-react-googlemap-react-master)
+[![codebeat badge](https://codebeat.co/badges/5f2d37fd-0e7b-4335-a043-477506c4418c)](https://codebeat.co/projects/github-com-googlemap-react-googlemap-react-master)
 
 Easier Google Map Integration for React projects.
 
-[READ THE DOC](https://react-google-map.gabriel-wu.com)
+[READ THE DOC](https://doc.googlemap-react.com)
 
 ## Why a new package
 
@@ -113,8 +113,7 @@ return (
 )
 ```
 
-For more detailed explanation, see the
-[doc](https://react-google-map.garbiel-wu.com).
+For more detailed explanation, see the [doc](https://doc.googlemap-react.com).
 
 ## Advanced usage
 
@@ -126,8 +125,8 @@ hooks `useGoogleAPI`, `useGoogleListeners` in your own components.
 First, you need to clone the repository and install the dependencies:
 
 ```sh
-git clone https://github.com/lucifer1004/react-gmap
-cd react-gmap
+git clone https://github.com/googlemap-react/googlemap-react
+cd googlemap-react
 yarn install
 ```
 

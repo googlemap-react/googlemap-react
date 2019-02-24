@@ -12,7 +12,7 @@ before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.13.0
   - export PATH=$HOME/.yarn/bin:$PATH
 script:
-  - yarn test --coverage
+  - yarn test:lib --coverage
   - bash <(curl -s https://codecov.io/bash) -f packages/lib/coverage/coverage-final.json
 
 before_deploy: yarn global add now # Install Now CLI on Travis

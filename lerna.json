@@ -4,7 +4,6 @@
   "command": {
     "version": {
       "allowBranch": "master",
-      "conventionalCommits": true,
       "exact": true,
       "gitRemote": "origin",
       "message": "chore(release): %s"

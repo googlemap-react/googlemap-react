@@ -1,10 +1,18 @@
 # CHANGELOG
 
+## [0.0.4] - <2019-02-24>
+
+### CHANGED
+
+- Do not load script at server side.
+
 ## [0.0.3] - <2019-02-24>
 
 ### FIXED
 
 - Objects can be removed properly.
+
+## [0.0.2] - <2019-02-24>
 
 ## [0.0.1] - <2019-02-24>
 

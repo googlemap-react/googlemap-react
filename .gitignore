@@ -15,6 +15,7 @@ dist
 doc
 styleguide
 /packages/lib/*.md
+.next
 
 # misc
 .DS_Store

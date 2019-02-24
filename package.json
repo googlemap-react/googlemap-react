@@ -17,6 +17,7 @@
     "deploy:now": "sh deploy.sh",
     "dev:CRA": "cd examples/CRA && yarn start",
     "dev:lib": "cd packages/lib && yarn dev",
+    "dev:next": "cd examples/next && yarn dev",
     "format": "npx prettier \"*.{js,json,md}\" \"{packages/lib,examples/CRA}/src/**/*.{js,jsx,ts,tsx,md,json,vue}\" --write",
     "publish:lib": "cd packages/lib && yarn publish",
     "start:CRA": "yarn build:lib && cd examples/CRA && yarn start",

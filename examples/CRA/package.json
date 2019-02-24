@@ -1,0 +1,55 @@
+{
+  "name": "@googlemap-react/example-cra",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Google Map component for React.",
+  "repository": "git@github.com:googlemap-react/googlemap-react.git",
+  "author": "Gabriel Wu <qqbbnease1004@126.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "6.2.0",
+    "loadjs": "3.5.5",
+    "react": "16.8.3",
+    "react-dom": "16.8.3",
+    "uuid": "3.3.2"
+  },
+  "devDependencies": {
+    "@babel/plugin-syntax-typescript": "7.3.3",
+    "@types/googlemaps": "3.30.16",
+    "@types/jest": "24.0.6",
+    "@types/loadjs": "3.5.0",
+    "@types/node": "11.9.5",
+    "@types/react": "16.8.4",
+    "@types/react-dom": "16.8.2",
+    "jest-dom": "3.1.2",
+    "react-scripts": "2.1.5",
+    "typescript": "3.3.3333"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app",
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "plugins": [
+      "@typescript-eslint",
+      "prettier",
+      "react-hooks"
+    ],
+    "rules": {
+      "prettier/prettier": "error"
+    }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

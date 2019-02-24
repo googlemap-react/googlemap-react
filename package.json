@@ -1,0 +1,37 @@
+{
+  "name": "@googlemap-react/monorepo",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Google Map component for React.",
+  "repository": "git@github.com:lucifer1004/react-google-map.git",
+  "author": "Gabriel Wu <qqbbnease1004@126.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "husky": "1.3.1",
+    "lerna": "3.13.0",
+    "lint-staged": "8.1.4",
+    "prettier": "1.16.4"
+  },
+  "scripts": {
+    "build:CRA": "yarn build:lib && cd examples/CRA && yarn build",
+    "build:lib": "cd packages/lib && yarn build",
+    "deploy:now": "sh deploy.sh",
+    "dev:CRA": "cd examples/CRA && yarn start",
+    "dev:lib": "cd packages/lib && yarn dev",
+    "format": "npx prettier \"*.{js,json,md}\" \"{packages/lib,examples/CRA}/src/**/*.{js,jsx,ts,tsx,md,json,vue}\" --write",
+    "publish:lib": "cd packages/lib && yarn publish",
+    "start:CRA": "yarn build:lib && cd examples/CRA && yarn start",
+    "styleguide": "cd packages/lib && yarn styleguide",
+    "styleguide:build": "cd packages/lib && yarn styleguide:build",
+    "test:lib": "cd packages/lib && rm -rf dist && yarn test"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn test:lib --coverage && lint-staged"
+    }
+  },
+  "workspaces": [
+    "examples/*",
+    "packages/*"
+  ]
+}

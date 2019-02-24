@@ -1,0 +1,11 @@
+0 silly argv { _: [ 'clean' ],
+0 silly argv   lernaVersion: '3.12.1',
+0 silly argv   '$0': '/usr/local/bin/lerna' }
+1 notice cli v3.12.1
+2 verbose rootPath /Users/gabriel/Documents/GitHub/googlemap-react/googlemap-react
+3 error Error: Invalid package name "@googlemap-react/examples/CRA": name can only contain URL-friendly characters
+3 error     at invalidPackageName (/Users/gabriel/.config/yarn/global/node_modules/npm-package-arg/npa.js:82:15)
+3 error     at Result.setName (/Users/gabriel/.config/yarn/global/node_modules/npm-package-arg/npa.js:118:11)
+3 error     at new Result (/Users/gabriel/.config/yarn/global/node_modules/npm-package-arg/npa.js:107:23)
+3 error     at Function.resolve (/Users/gabriel/.config/yarn/global/node_modules/npm-package-arg/npa.js:54:15)
+3 error     at new Package (/Users/gabriel/.config/yarn/global/node_modules/@lerna/package/index.js:36:26)

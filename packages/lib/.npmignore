@@ -1,0 +1,6 @@
+*
+!dist/**/*.d.ts
+!dist/*.d.ts
+!dist/*.map
+!dist/*.js
+!dist/*.mjs

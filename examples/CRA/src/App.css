@@ -1,0 +1,12 @@
+.Map {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  width: 100%;
+}
+
+button,
+input {
+  font-size: 20px;
+  height: 40px;
+}

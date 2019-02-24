@@ -1,0 +1,17 @@
+{
+  "version": "0.0.0",
+  "packages": ["packages/lib", "examples/*"],
+  "command": {
+    "version": {
+      "allowBranch": "master",
+      "conventionalCommits": true,
+      "exact": true,
+      "gitRemote": "origin",
+      "message": "chore(release): %s"
+    }
+  },
+  "ignoreChanges": ["**/__tests__/**", "**/*.md"],
+  "npmClient": "yarn",
+  "npmClientArgs": ["--no-lockfile"],
+  "useWorkspaces": true
+}

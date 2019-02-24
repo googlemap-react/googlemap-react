@@ -1,0 +1,88 @@
+{
+  "name": "@googlemap-react/core",
+  "version": "0.0.0",
+  "description": "Easier-to-use Google Map & React integration",
+  "repository": "git@github.com:lucifer1004/react-google-map.git",
+  "author": "Gabriel Wu <qqbbnease1004@126.com>",
+  "homepage": "https://github.com/lucifer1004/react-google-map#readme",
+  "bugs": {
+    "url": "https://github.com/lucifer1004/react-google-map/issues"
+  },
+  "license": "MIT",
+  "keywords": [
+    "google map",
+    "react",
+    "react hooks",
+    "react context"
+  ],
+  "source": "index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "umd": "dist/index.umd.js",
+  "dependencies": {
+    "loadjs": "^3.5.5",
+    "uuid": "^3.3.2"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-syntax-typescript": "7.3.3",
+    "@types/googlemaps": "3.30.16",
+    "@types/jest": "24.0.6",
+    "@types/loadjs": "3.5.0",
+    "@types/node": "11.9.5",
+    "@types/react": "16.8.4",
+    "@types/react-dom": "16.8.2",
+    "@types/uuid": "3.4.4",
+    "@typescript-eslint/eslint-plugin": "1.4.0",
+    "eslint-plugin-prettier": "3.0.1",
+    "eslint-plugin-react-hooks": "1.2.0",
+    "jest-dom": "3.1.2",
+    "microbundle": "0.10.1",
+    "react": "16.8.3",
+    "react-docgen-typescript": "1.12.3",
+    "react-dom": "16.8.3",
+    "react-scripts": "2.1.5",
+    "react-styleguidist": "8.0.6",
+    "react-testing-library": "5.9.0",
+    "typescript": "3.3.3333"
+  },
+  "scripts": {
+    "build": "cp ../../*.md . && rm -rf dist && microbundle --jsx React.createElement --strict && rm -rf .rts2_cache_*",
+    "dev": "microbundle --jsx React.createElement --strict --watch --format cjs",
+    "prepublish": "yarn build",
+    "postpublish": "rm -rf dist",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build",
+    "test": "react-scripts test"
+  },
+  "eslintConfig": {
+    "extends": "react-app",
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "plugins": [
+      "@typescript-eslint",
+      "prettier",
+      "react-hooks"
+    ],
+    "rules": {
+      "prettier/prettier": "error"
+    }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!src/__test__helpers__/**"
+    ]
+  }
+}

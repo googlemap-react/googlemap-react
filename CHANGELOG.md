@@ -1,7 +1,13 @@
 # CHANGELOG
 
+## [0.0.3] - <2019-02-24>
+
+### FIXED
+
+- Objects can be removed properly.
+
 ## [0.0.1] - <2019-02-24>
 
 ### CHANGED
 
-`@lucifer1004/react-google-map` has been renamed to `@googlemap-react/core`.
+- `@lucifer1004/react-google-map` has been renamed to `@googlemap-react/core`.

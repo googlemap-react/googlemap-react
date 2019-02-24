@@ -48,7 +48,9 @@ const reducer = (state: GoogleMapState, action: GoogleMapAction) => {
       const objectToRemove = state.objects.get(action.id)
       if (objectToRemove === undefined)
         throw new Error('There is no object with the given id')
-      if (objectToRemove.hasOwnProperty('setMap'))
+
+      // If the object can setMap, then setMap to null
+      if ((objectToRemove as GoogleMapObjectWithSetMap).setMap)
         (objectToRemove as GoogleMapObjectWithSetMap).setMap(null)
       state.objects.delete(action.id)
 

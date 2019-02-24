@@ -6,7 +6,9 @@ import {GoogleMapContext} from '../contexts/GoogleMapContext'
 const CustomControl = ({
   bindingPosition = 'RIGHT_TOP',
   children,
-}: CustomControlProps): React.ReactPortal => {
+}: CustomControlProps): React.ReactPortal | null => {
+  if (!document) return null
+
   const {state} = useContext(GoogleMapContext)
   const [container] = useState<HTMLDivElement>(document.createElement('div'))
 

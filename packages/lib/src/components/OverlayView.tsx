@@ -18,7 +18,9 @@ const OverlayView = ({
   onTouchStart,
   disableMapHits = false,
   disableMapHitsAndGestures = false,
-}: OverlayViewProps): React.ReactPortal => {
+}: OverlayViewProps): React.ReactPortal | null => {
+  if (!document) return null
+
   const {state} = useContext(GoogleMapContext)
   const [container] = useState<HTMLDivElement>(document.createElement('div'))
   const [_overlay, setOverlay] = useState<google.maps.OverlayView | undefined>(

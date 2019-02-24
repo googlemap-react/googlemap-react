@@ -65,7 +65,6 @@
     "build": "cp ../../*.md . && rm -rf dist && microbundle --jsx React.createElement --strict && rm -rf .rts2_cache_*",
     "dev": "microbundle --jsx React.createElement --strict --watch --format cjs",
     "prepublish": "yarn build",
-    "postpublish": "rm -rf dist",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
     "test": "react-scripts test"

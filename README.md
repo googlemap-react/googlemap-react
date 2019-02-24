@@ -5,6 +5,8 @@
 [![codecov](https://codecov.io/gh/googlemap-react/googlemap-react/branch/master/graph/badge.svg)](https://codecov.io/gh/googlemap-react/googlemap-react)
 [![codebeat badge](https://codebeat.co/badges/5f2d37fd-0e7b-4335-a043-477506c4418c)](https://codebeat.co/projects/github-com-googlemap-react-googlemap-react-master)
 
+[![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/googlemap-react)
+
 Easier Google Map Integration for React projects.
 
 [READ THE DOC](https://doc.googlemap-react.com)

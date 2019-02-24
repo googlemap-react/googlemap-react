@@ -2,18 +2,30 @@
   "name": "@googlemap-react/core",
   "version": "0.0.0",
   "description": "Easier-to-use Google Map & React integration",
-  "repository": "git@github.com:lucifer1004/react-google-map.git",
+  "repository": "git@github.com:googlemap-react/googlemap-react.git",
   "author": "Gabriel Wu <qqbbnease1004@126.com>",
-  "homepage": "https://github.com/lucifer1004/react-google-map#readme",
+  "homepage": "https://github.com/googlemap-react/googlemap-react#readme",
   "bugs": {
-    "url": "https://github.com/lucifer1004/react-google-map/issues"
+    "url": "https://github.com/googlemap-react/googlemap-react/issues"
   },
   "license": "MIT",
   "keywords": [
     "google map",
+    "googlemap",
     "react",
     "react hooks",
-    "react context"
+    "react context",
+    "marker",
+    "infowindow",
+    "map",
+    "street view",
+    "places",
+    "search",
+    "drawing",
+    "visualization",
+    "geometry",
+    "shapes",
+    "overlay"
   ],
   "source": "index.ts",
   "main": "dist/index.js",

@@ -1,5 +1,5 @@
 module.exports = {
-  title: '@lucifer1004/react-google-map',
+  title: 'googlemap-react',
   sections: [
     {
       name: 'Introduction',

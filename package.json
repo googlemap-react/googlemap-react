@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "description": "Google Map component for React.",
-  "repository": "git@github.com:lucifer1004/react-google-map.git",
+  "repository": "git@github.com:googlemap-react/googlemap-react.git",
   "author": "Gabriel Wu <qqbbnease1004@126.com>",
   "license": "MIT",
   "devDependencies": {

@@ -1,9 +1,9 @@
 # React Google Map
 
-[![version](https://img.shields.io/badge/%40lucifer1004%2Freact--google--map-3.0.0-blue.svg)](https://www.npmjs.com/package/@lucifer1004/react-google-map)
+[![npm package](https://img.shields.io/npm/v/@googlemap-react/core/latest.svg)](https://www.npmjs.com/package/@googlemap-react/core)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![codecov](https://codecov.io/gh/lucifer1004/react-google-map/branch/master/graph/badge.svg)](https://codecov.io/gh/lucifer1004/react-google-map)
-[![codebeat badge](https://codebeat.co/badges/e7a5b064-277b-496d-9528-6fb835eb6ad4)](https://codebeat.co/projects/github-com-lucifer1004-react-google-map-master)
+[![codecov](https://codecov.io/gh/googlemap-react/googlemap-react/branch/master/graph/badge.svg)](https://codecov.io/gh/googlemap-react/googlemap-react)
+[![codebeat badge](https://codebeat.co/badges/e7a5b064-277b-496d-9528-6fb835eb6ad4)](https://codebeat.co/projects/github-com-googlemap-react-googlemap-react-master)
 
 Easier Google Map Integration for React projects.
 
@@ -35,9 +35,9 @@ empowered by `React`'s latest features (`React >= 16.8.0` is required) and
 - npm or yarn
 
 ```sh
-yarn add @lucifer1004/react-google-map
+yarn add @googlemap-react/core
 # Or you can use
-npm install --save @lucifer1004/react-google-map
+npm install --save @googlemap-react/core
 ```
 
 - a valid Google Map API key (to replace the place holder in the code snippet

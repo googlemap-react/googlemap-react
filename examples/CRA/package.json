@@ -2,7 +2,7 @@
   "name": "@googlemap-react/example-cra",
   "private": true,
   "version": "0.0.0",
-  "description": "Google Map component for React.",
+  "description": "CRA example for @googlemap-react",
   "repository": "git@github.com:googlemap-react/googlemap-react.git",
   "author": "Gabriel Wu <qqbbnease1004@126.com>",
   "license": "MIT",

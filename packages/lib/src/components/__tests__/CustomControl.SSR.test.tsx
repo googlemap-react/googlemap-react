@@ -1,19 +1,20 @@
 import React from 'react'
 import {renderToString} from 'react-dom/server'
-import {GoogleMapProvider, MapBox} from '../../..'
+import {CustomControl, GoogleMapProvider, MapBox} from '../../..'
 
-describe('MapBox', () => {
+describe('CustomControl', () => {
   beforeEach(() => {
     delete (global as any).document
   })
 
-  it('does not render map at server side', async () => {
+  it('does not render children at server side', async () => {
     expect(
       renderToString(
         <GoogleMapProvider>
+          <CustomControl>Hello</CustomControl>
           <MapBox />
         </GoogleMapProvider>,
       ),
-    ).not.toMatch('map')
+    ).not.toMatch('Hello')
   })
 })

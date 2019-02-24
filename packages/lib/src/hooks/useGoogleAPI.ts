@@ -18,7 +18,7 @@ const useGoogleAPI = ({
   const [loaded, setLoaded] = useState(false)
   useEffect(() => {
     // Should not load script at server side
-    if (!document) return
+    if (typeof document === 'undefined') return
 
     const googleMapScriptUri = `${GOOGLE_MAP_BASE_URI}?key=${apiKey}${libraryParam}${languageParam}${regionParam}`
     if (!loadjs.isDefined('gmap')) loadjs(googleMapScriptUri, 'gmap')

@@ -19,7 +19,7 @@ const OverlayView = ({
   disableMapHits = false,
   disableMapHitsAndGestures = false,
 }: OverlayViewProps): React.ReactPortal | null => {
-  if (!document) return null
+  if (typeof document === 'undefined') return null
 
   const {state} = useContext(GoogleMapContext)
   const [container] = useState<HTMLDivElement>(document.createElement('div'))

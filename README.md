@@ -1,4 +1,4 @@
-# React Google Map
+# googlemap-react
 
 [![npm package](https://img.shields.io/npm/v/@googlemap-react/core/latest.svg)](https://www.npmjs.com/package/@googlemap-react/core)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

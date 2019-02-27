@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [0.0.5] - <2019-02-27>
+
+### FIXED
+
+- Improved SSR support.
+
 ## [0.0.4] - <2019-02-24>
 
 ### CHANGED

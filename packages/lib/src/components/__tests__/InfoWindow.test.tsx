@@ -56,4 +56,16 @@ describe('InfoWindow', () => {
       ),
     )
   })
+
+  it('can have children', async () => {
+    const {container, rerender} = render(
+      <GoogleMapProvider>
+        <MapBox apiKey="FAKE_KEY" />
+        <InfoWindow visible>I am children</InfoWindow>
+      </GoogleMapProvider>,
+    )
+    await wait(() => {
+      expect(container.innerHTML).not.toMatch('Loading...')
+    })
+  })
 })

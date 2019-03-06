@@ -7,6 +7,8 @@ A wrapper around `google.maps.InfoWindow`.
 - `visible` determines whether the info window is visible.
 - The rest are event handlers. For each type of event, there can be an event
   handler.
+- **Note:** If an `InfoWindow` has `children`, `opts.content` will be ignored,
+  instead, the `children` will be displayed.
 
 A simple InfoWindow (without anchor):
 
@@ -53,5 +55,29 @@ const {GoogleMapProvider, MapBox, Marker, InfoWindow} = require('../../')
     }}
     visible
   />
+</GoogleMapProvider>
+```
+
+InfoWindow with children:
+
+```jsx
+const {GoogleMapProvider, MapBox, InfoWindow} = require('../../')
+
+;<GoogleMapProvider>
+  <MapBox
+    style={{
+      height: '50vh',
+      width: '100%',
+    }}
+  />
+  <InfoWindow visible>
+    <button
+      onClick={() => {
+        alert('Hello')
+      }}
+    >
+      Click me!
+    </button>
+  </InfoWindow>
 </GoogleMapProvider>
 ```

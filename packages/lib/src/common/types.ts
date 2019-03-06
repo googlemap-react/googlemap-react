@@ -137,6 +137,7 @@ export interface InfoWindowProps {
   anchorId?: string
   opts?: google.maps.InfoWindowOptions
   visible?: boolean
+  children?: React.ReactNode
   onCloseClick?: () => any
   onContentChanged?: () => any
   onDOMReady?: () => any

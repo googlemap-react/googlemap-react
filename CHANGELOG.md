@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [0.1.0] - <2019-03-06>
+
+### CHANGED
+
+- `InfoWindow` can have `children` now, which has higher priority than
+  `opts.content`.
+
 ## [0.0.5] - <2019-02-27>
 
 ### FIXED

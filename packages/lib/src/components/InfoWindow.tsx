@@ -1,4 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react'
+import ReactDOM from 'react-dom'
 import {DEFAULT_INFO_WINDOW_OPTIONS} from '../common/constants'
 import {InfoWindowProps} from '../common/types'
 import {GoogleMapContext} from '../contexts/GoogleMapContext'
@@ -8,20 +9,26 @@ const InfoWindow = ({
   anchorId,
   opts = DEFAULT_INFO_WINDOW_OPTIONS,
   visible,
+  children,
   onCloseClick,
   onContentChanged,
   onDOMReady,
   onPositionChanged,
   onZIndexChanged,
-}: InfoWindowProps) => {
+}: InfoWindowProps): React.ReactPortal | null => {
+  if (typeof document === 'undefined') return null
   const {state} = useContext(GoogleMapContext)
   const [infoWindow, setInfoWindow] = useState<
     google.maps.InfoWindow | undefined
   >(undefined)
+  const [container] = useState(document.createElement('div'))
 
   useEffect(() => {
     if (state.map === undefined) return
-    const infoWindow = new google.maps.InfoWindow(opts)
+    const infoWindow = new google.maps.InfoWindow({
+      ...opts,
+      content: !!children ? container : opts.content,
+    })
     setInfoWindow(infoWindow)
 
     const anchor = anchorId ? state.objects.get(anchorId) : undefined
@@ -46,10 +53,13 @@ const InfoWindow = ({
   // Modify the google.maps.InfoWindow object when component props change
   useEffect(() => {
     if (infoWindow === undefined) return
-    infoWindow.setOptions(opts)
+    infoWindow.setOptions({
+      ...opts,
+      content: !!children ? container : opts.content,
+    })
   }, [opts])
 
-  return null
+  return ReactDOM.createPortal(children, container)
 }
 
 InfoWindow.displayName = 'InfoWindow'

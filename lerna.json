@@ -3,7 +3,7 @@
   "packages": ["packages/*", "examples/*"],
   "command": {
     "version": {
-      "allowBranch": "master",
+      "allowBranch": ["master", "next"],
       "exact": true,
       "gitRemote": "origin",
       "message": "chore(release): %s"

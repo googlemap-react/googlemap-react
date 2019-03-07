@@ -21,7 +21,7 @@ const useGoogleListener = (
     return () => {
       listeners.forEach(listener => listener.remove())
     }
-  }, [instance])
+  }, [instance, events])
 }
 
 export default useGoogleListener

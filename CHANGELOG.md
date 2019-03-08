@@ -1,5 +1,21 @@
 # CHANGELOG
 
+## [0.1.1] - <2019-03-08>
+
+### FIXED
+
+- Use memoized options for the following (#4):
+  - `MapBox`
+  - `Marker`
+  - `Circle`
+  - `Polyline`
+  - `Polygon`
+  - `Rectangle`
+  - `StreetView`
+  - `KmlLayer`
+  - `DrawingManager`
+- Re-register event listeners on rerender (#3)
+
 ## [0.1.0] - <2019-03-06>
 
 ### CHANGED

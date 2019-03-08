@@ -46,6 +46,23 @@ function.
 > **[NOTE]** You should pay as much attention as you can to `id` when using this
 > package, if you want to manipulate Google Map objects directly.
 
+An example usage of the context state:
+
+```javascript
+import React, {useContext} from 'react'
+import {GoogleMapContext} from '@googlemap-react/core'
+
+const MyComponent = () => {
+  const [state, dispatch] = useContext(GoogleMapContext)
+
+  // You can now access the map object and other objects via `state`.
+  // Remember to check existence, since they might be undefined.
+  state.map && state.map.setZoom(12)
+
+  return null
+}
+```
+
 ### More uniform API
 
 The API is designed to be more uniform. Only `opts` is exposed, making use of

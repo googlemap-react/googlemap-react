@@ -43,6 +43,7 @@ const MapBox = ({
 }: MapBoxProps) => {
   // Get access to the Google Map context
   const {state, dispatch} = useContext(GoogleMapContext)
+  const [prevOpts, setPrevOpts] = useState('')
 
   // Generate a random id for the DOM node where Google Map will be inserted
   const [mapItemId] = useState(`map-${uuid()}`)
@@ -75,6 +76,7 @@ const MapBox = ({
   useEffect(() => {
     if (!loaded) return
     const map = new google.maps.Map(document.getElementById(mapItemId), opts)
+    setPrevOpts(JSON.stringify(opts))
     if (usePlaces) {
       const places = new google.maps.places.PlacesService(map)
       initMap(map, places)
@@ -106,8 +108,14 @@ const MapBox = ({
 
   // Modify the google.maps.Map object when component props change
   useEffect(() => {
-    if (state.map === undefined) return
+    if (
+      state.map === undefined ||
+      opts === undefined ||
+      JSON.stringify(opts) === prevOpts
+    )
+      return
     state.map.setOptions(opts)
+    setPrevOpts(JSON.stringify(opts))
   }, [opts])
 
   // Render <MapBox>

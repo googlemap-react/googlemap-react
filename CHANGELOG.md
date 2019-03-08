@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [0.1.2] - <2019-03-08>
+
+### FIXED
+
+- Remove console information
+
 ## [0.1.1] - <2019-03-08>
 
 ### FIXED

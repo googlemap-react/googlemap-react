@@ -8,7 +8,6 @@ const useMemoizedOptions = (
   setPrevOpts: React.Dispatch<React.SetStateAction<string>>,
 ) => {
   useEffect(() => {
-    if (JSON.stringify(opts) === prevOpts) console.log('Memoized!')
     if (
       instance === undefined ||
       opts === undefined ||

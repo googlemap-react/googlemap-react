@@ -48,7 +48,7 @@ function.
 
 An example usage of the context state:
 
-```javascript
+```jsx static
 import React, {useContext} from 'react'
 import {GoogleMapContext} from '@googlemap-react/core'
 

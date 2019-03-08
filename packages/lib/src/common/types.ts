@@ -24,6 +24,14 @@ export declare type GoogleMapObjectWithSetMap =
   | google.maps.drawing.DrawingManager
   | google.maps.visualization.HeatmapLayer
 
+export declare type GoogleMapObjectWithSetOptions =
+  | google.maps.Map
+  | GoogleMapShape
+  | google.maps.TrafficLayer
+  | google.maps.StreetViewPanorama
+  | google.maps.KmlLayer
+  | google.maps.drawing.DrawingManager
+
 export declare type GoogleMapObject =
   | GoogleMapObjectWithSetMap
   | google.maps.StreetViewPanorama

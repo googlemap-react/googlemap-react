@@ -1,9 +1,9 @@
 import React, {useContext, useEffect, useState} from 'react'
 import uuid from 'uuid/v1'
-import {useGoogleListener} from '../hooks'
 import {DEFAULT_POLYLINE_OPTIONS} from '../common/constants'
 import {PolylineProps} from '../common/types'
 import {GoogleMapContext} from '../contexts/GoogleMapContext'
+import {useGoogleListener, useMemoizedOptions} from '../hooks'
 
 const Polyline = ({
   id,
@@ -20,6 +20,7 @@ const Polyline = ({
   onRightClick,
 }: PolylineProps) => {
   const {state, dispatch} = useContext(GoogleMapContext)
+  const [prevOpts, setPrevOpts] = useState('')
   const [polyline, setPolyline] = useState<google.maps.Polyline | undefined>(
     undefined,
   )
@@ -31,23 +32,19 @@ const Polyline = ({
 
   useEffect(() => {
     if (state.map === undefined) return
-    setPolyline(
-      new google.maps.Polyline({
-        ...opts,
-        map: state.map,
-      }),
-    )
-  }, [state.map])
-
-  useEffect(() => {
-    if (polyline === undefined) return
+    const polyline = new google.maps.Polyline({
+      ...opts,
+      map: state.map,
+    })
+    setPolyline(polyline)
+    setPrevOpts(JSON.stringify(opts))
 
     // Add the polyline to state.objects
     addPolyline(polyline)
 
     // Remove the polyline when the component is unmounted
     return () => removePolyline()
-  }, [polyline])
+  }, [state.map])
 
   // Register google map event listeners
   useGoogleListener(polyline, [
@@ -64,10 +61,7 @@ const Polyline = ({
   ])
 
   // Modify the google.maps.Polyline object when component props change
-  useEffect(() => {
-    if (polyline === undefined) return
-    polyline.setOptions(opts)
-  }, [opts])
+  useMemoizedOptions(polyline, opts, prevOpts, setPrevOpts)
 
   return null
 }

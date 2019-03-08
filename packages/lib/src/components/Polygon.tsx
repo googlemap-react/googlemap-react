@@ -1,9 +1,9 @@
 import React, {useContext, useEffect, useState} from 'react'
 import uuid from 'uuid/v1'
-import {useGoogleListener} from '../hooks'
 import {DEFAULT_POLYGON_OPTIONS} from '../common/constants'
 import {PolygonProps} from '../common/types'
 import {GoogleMapContext} from '../contexts/GoogleMapContext'
+import {useGoogleListener, useMemoizedOptions} from '../hooks'
 
 const Polygon = ({
   id,
@@ -20,6 +20,7 @@ const Polygon = ({
   onRightClick,
 }: PolygonProps) => {
   const {state, dispatch} = useContext(GoogleMapContext)
+  const [prevOpts, setPrevOpts] = useState('')
   const [polygon, setPolygon] = useState<google.maps.Polygon | undefined>(
     undefined,
   )
@@ -36,6 +37,7 @@ const Polygon = ({
       map: state.map,
     })
     setPolygon(polygon)
+    setPrevOpts(JSON.stringify(opts))
 
     // Add the polygon to state.objects
     addPolygon(polygon)
@@ -59,10 +61,7 @@ const Polygon = ({
   ])
 
   // Modify the google.maps.Polygon object when component props change
-  useEffect(() => {
-    if (polygon === undefined) return
-    polygon.setOptions(opts)
-  }, [opts])
+  useMemoizedOptions(polygon, opts, prevOpts, setPrevOpts)
 
   return null
 }

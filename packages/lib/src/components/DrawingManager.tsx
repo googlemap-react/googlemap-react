@@ -2,7 +2,7 @@ import React, {useContext, useEffect, useRef, useState} from 'react'
 import {DEFAULT_DRAWING_MANAGER_OPTIONS} from '../common/constants'
 import {DrawingManagerProps, GoogleMapShape} from '../common/types'
 import {GoogleMapContext} from '../contexts/GoogleMapContext'
-import {useGoogleListener} from '../hooks'
+import {useGoogleListener, useMemoizedOptions} from '../hooks'
 
 const DrawingManager = ({
   opts = DEFAULT_DRAWING_MANAGER_OPTIONS,
@@ -15,6 +15,7 @@ const DrawingManager = ({
 }: DrawingManagerProps) => {
   const drawingManagerId = 'drawing-manager'
   const {state, dispatch} = useContext(GoogleMapContext)
+  const [prevOpts, setPrevOpts] = useState('')
   const [drawingManager, setDrawingManager] = useState<
     google.maps.drawing.DrawingManager | undefined
   >(undefined)
@@ -45,6 +46,7 @@ const DrawingManager = ({
       object: drawingManager,
       id: drawingManagerId,
     })
+
   const removeDrawingManager = () => {
     removeShapes()
     dispatch({type: 'remove_object', id: drawingManagerId})
@@ -57,6 +59,9 @@ const DrawingManager = ({
       map: state.map,
     })
     setDrawingManager(drawingManager)
+    setPrevOpts(JSON.stringify(opts))
+
+    // Add DrawingManager to state.objects
     addDrawingManager(drawingManager)
 
     // Remove DrawingManager and all shapes
@@ -77,10 +82,7 @@ const DrawingManager = ({
     {name: 'rectanglecomplete', handler: onRectangleComplete},
   ])
 
-  useEffect(() => {
-    if (drawingManager === undefined || opts === undefined) return
-    drawingManager.setOptions(opts)
-  }, [opts])
+  useMemoizedOptions(drawingManager, opts, prevOpts, setPrevOpts)
 
   return null
 }

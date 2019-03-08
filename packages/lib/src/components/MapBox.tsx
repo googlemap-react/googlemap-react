@@ -1,6 +1,6 @@
 import React, {useEffect, useContext, useState} from 'react'
 import uuid from 'uuid/v1'
-import {useGoogleAPI, useGoogleListener} from '../hooks'
+import {useGoogleAPI, useGoogleListener, useMemoizedOptions} from '../hooks'
 import {
   DEFAULT_MAP_OPTIONS,
   DEFAULT_MAP_STYLE,
@@ -42,8 +42,9 @@ const MapBox = ({
   onZoomChanged,
 }: MapBoxProps) => {
   // Get access to the Google Map context
-  const {state, dispatch} = useContext(GoogleMapContext)
+  const {dispatch} = useContext(GoogleMapContext)
   const [prevOpts, setPrevOpts] = useState('')
+  const [map, setMap] = useState<google.maps.Map | undefined>(undefined)
 
   // Generate a random id for the DOM node where Google Map will be inserted
   const [mapItemId] = useState(`map-${uuid()}`)
@@ -76,6 +77,7 @@ const MapBox = ({
   useEffect(() => {
     if (!loaded) return
     const map = new google.maps.Map(document.getElementById(mapItemId), opts)
+    setMap(map)
     setPrevOpts(JSON.stringify(opts))
     if (usePlaces) {
       const places = new google.maps.places.PlacesService(map)
@@ -85,7 +87,7 @@ const MapBox = ({
   }, [loaded])
 
   // Register event listeners
-  useGoogleListener(state.map, [
+  useGoogleListener(map, [
     {name: 'bounds_changed', handler: onBoundsChanged},
     {name: 'center_changed', handler: onCenterChanged},
     {name: 'click', handler: onClick},
@@ -107,16 +109,7 @@ const MapBox = ({
   ])
 
   // Modify the google.maps.Map object when component props change
-  useEffect(() => {
-    if (
-      state.map === undefined ||
-      opts === undefined ||
-      JSON.stringify(opts) === prevOpts
-    )
-      return
-    state.map.setOptions(opts)
-    setPrevOpts(JSON.stringify(opts))
-  }, [opts])
+  useMemoizedOptions(map, opts, prevOpts, setPrevOpts)
 
   // Render <MapBox>
   return (

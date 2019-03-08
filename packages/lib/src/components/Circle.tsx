@@ -1,9 +1,9 @@
 import React, {useContext, useEffect, useState} from 'react'
 import uuid from 'uuid/v1'
-import {useGoogleListener} from '../hooks'
 import {DEFAULT_CIRCLE_OPTIONS} from '../common/constants'
 import {CircleProps} from '../common/types'
 import {GoogleMapContext} from '../contexts/GoogleMapContext'
+import {useGoogleListener, useMemoizedOptions} from '../hooks'
 
 const Circle = ({
   id,
@@ -22,6 +22,7 @@ const Circle = ({
   onRightClick,
 }: CircleProps) => {
   const {state, dispatch} = useContext(GoogleMapContext)
+  const [prevOpts, setPrevOpts] = useState('')
   const [circle, setCircle] = useState<google.maps.Circle | undefined>(
     undefined,
   )
@@ -37,6 +38,7 @@ const Circle = ({
       map: state.map,
     })
     setCircle(circle)
+    setPrevOpts(JSON.stringify(opts))
 
     // Add the circle to state.objects
     addCircle(circle)
@@ -62,10 +64,7 @@ const Circle = ({
   ])
 
   // Modify the google.maps.Circle object when component props change
-  useEffect(() => {
-    if (circle === undefined) return
-    circle.setOptions(opts)
-  }, [opts])
+  useMemoizedOptions(circle, opts, prevOpts, setPrevOpts)
 
   return null
 }

@@ -1,12 +1,12 @@
 import React, {useContext, useEffect, useState} from 'react'
+import uuid from 'uuid/v1'
 import {
   DEFAULT_MAP_STYLE,
   DEFAULT_STREET_VIEW_OPTIONS,
 } from '../common/constants'
-import uuid from 'uuid/v1'
-import {GoogleMapContext} from '../contexts/GoogleMapContext'
-import {useGoogleListener} from '../hooks'
 import {BasicStreetViewProps} from '../common/types'
+import {GoogleMapContext} from '../contexts/GoogleMapContext'
+import {useGoogleListener, useMemoizedOptions} from '../hooks'
 
 const BasicStreetView = ({
   id,
@@ -24,15 +24,13 @@ const BasicStreetView = ({
   onZoomChanged,
 }: BasicStreetViewProps) => {
   const {state, dispatch} = useContext(GoogleMapContext)
+  const [prevOpts, setPrevOpts] = useState('')
   const [streetView, setStreetView] = useState<
     google.maps.StreetViewPanorama | undefined
   >(undefined)
   const [streetViewId] = useState(
     id ? id : bindToMap ? 'street-view' : `street-view-${uuid()}`,
   )
-  const [prevOpts, setPrevOpts] = useState<
-    google.maps.StreetViewPanoramaOptions | undefined
-  >(undefined)
 
   const addStreetView = (streetView: google.maps.StreetViewPanorama) =>
     dispatch({type: 'add_object', object: streetView, id: streetViewId})
@@ -47,6 +45,7 @@ const BasicStreetView = ({
       opts,
     )
     setStreetView(streetView)
+    setPrevOpts(JSON.stringify(opts))
     addStreetView(streetView)
     if (bindToMap) {
       state.map.setOptions({streetView: streetView})
@@ -71,16 +70,7 @@ const BasicStreetView = ({
   ])
 
   // Modify the google.maps.StreetViewPanorama object when component props change
-  useEffect(() => {
-    if (
-      streetView === undefined ||
-      opts === undefined ||
-      JSON.stringify(opts) === JSON.stringify(prevOpts)
-    )
-      return
-    streetView.setOptions(opts)
-    setPrevOpts(opts)
-  }, [opts])
+  useMemoizedOptions(streetView, opts, prevOpts, setPrevOpts)
 
   return <div className={className} id={streetViewId} style={style} />
 }

@@ -3,7 +3,7 @@ import uuid from 'uuid/v1'
 import {DEFAULT_KML_LAYER_OPTIONS} from '../common/constants'
 import {KmlLayerProps} from '../common/types'
 import {GoogleMapContext} from '../contexts/GoogleMapContext'
-import {useGoogleListener} from '../hooks'
+import {useGoogleListener, useMemoizedOptions} from '../hooks'
 
 const KmlLayer = ({
   id,
@@ -13,6 +13,7 @@ const KmlLayer = ({
   onStatusChanged,
 }: KmlLayerProps) => {
   const {state, dispatch} = useContext(GoogleMapContext)
+  const [prevOpts, setPrevOpts] = useState('')
   const [kmlLayer, setKmlLayer] = useState<google.maps.KmlLayer | undefined>(
     undefined,
   )
@@ -31,6 +32,7 @@ const KmlLayer = ({
     if (state.map === undefined) return
     const kmlLayer = new google.maps.KmlLayer({...opts, map: state.map})
     setKmlLayer(kmlLayer)
+    setPrevOpts(JSON.stringify(opts))
 
     // Add the kmlLayer to state.objects
     addKmlLayer(kmlLayer)
@@ -45,10 +47,7 @@ const KmlLayer = ({
     {name: 'status_changed', handler: onStatusChanged},
   ])
 
-  useEffect(() => {
-    if (kmlLayer === undefined) return
-    opts && kmlLayer.setOptions(opts)
-  }, [opts])
+  useMemoizedOptions(kmlLayer, opts, prevOpts, setPrevOpts)
 
   return null
 }

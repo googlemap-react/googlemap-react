@@ -3,7 +3,7 @@ import uuid from 'uuid/v1'
 import {DEFAULT_MARKER_OPTIONS} from '../common/constants'
 import {MarkerProps} from '../common/types'
 import {GoogleMapContext} from '../contexts/GoogleMapContext'
-import {useGoogleListener} from '../hooks'
+import {useGoogleListener, useMemoizedOptions} from '../hooks'
 
 const Marker = ({
   id,
@@ -31,6 +31,7 @@ const Marker = ({
   onZIndexChanged,
 }: MarkerProps) => {
   const {state, dispatch} = useContext(GoogleMapContext)
+  const [prevOpts, setPrevOpts] = useState('')
   const [marker, setMarker] = useState<google.maps.Marker | undefined>(
     undefined,
   )
@@ -45,6 +46,7 @@ const Marker = ({
     if (state.map === undefined) return
     const marker = new google.maps.Marker({...opts, map: state.map})
     setMarker(marker)
+    setPrevOpts(JSON.stringify(opts))
 
     // Add the marker to state.objects
     addMarker(marker)
@@ -79,10 +81,7 @@ const Marker = ({
   ])
 
   // Modify the GoogleMapMarker object when component props change
-  useEffect(() => {
-    if (marker === undefined) return
-    marker.setOptions(opts)
-  }, [opts])
+  useMemoizedOptions(marker, opts, prevOpts, setPrevOpts)
 
   return null
 }

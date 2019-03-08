@@ -1,9 +1,9 @@
 import React, {useContext, useEffect, useState} from 'react'
 import uuid from 'uuid/v1'
-import {useGoogleListener} from '../hooks'
 import {DEFAULT_RECTANGLE_OPTIONS} from '../common/constants'
 import {RectangleProps} from '../common/types'
 import {GoogleMapContext} from '../contexts/GoogleMapContext'
+import {useGoogleListener, useMemoizedOptions} from '../hooks'
 
 const Rectangle = ({
   id,
@@ -21,6 +21,7 @@ const Rectangle = ({
   onRightClick,
 }: RectangleProps) => {
   const {state, dispatch} = useContext(GoogleMapContext)
+  const [prevOpts, setPrevOpts] = useState('')
   const [rectangle, setRectangle] = useState<google.maps.Rectangle | undefined>(
     undefined,
   )
@@ -33,23 +34,19 @@ const Rectangle = ({
 
   useEffect(() => {
     if (state.map === undefined) return
-    setRectangle(
-      new google.maps.Rectangle({
-        ...opts,
-        map: state.map,
-      }),
-    )
-  }, [state.map])
-
-  useEffect(() => {
-    if (rectangle === undefined) return
+    const rectangle = new google.maps.Rectangle({
+      ...opts,
+      map: state.map,
+    })
+    setRectangle(rectangle)
+    setPrevOpts(JSON.stringify(opts))
 
     // Add the rectangle to state.objects
     addRectangle(rectangle)
 
     // Remove the rectangle when the component is unmounted
     return () => removeRectangle()
-  }, [rectangle])
+  }, [state.map])
 
   // Register google map event listeners
   useGoogleListener(rectangle, [
@@ -67,10 +64,7 @@ const Rectangle = ({
   ])
 
   // Modify the google.maps.Rectangle object when component props change
-  useEffect(() => {
-    if (rectangle === undefined) return
-    rectangle.setOptions(opts)
-  }, [opts])
+  useMemoizedOptions(rectangle, opts, prevOpts, setPrevOpts)
 
   return null
 }

@@ -7,17 +7,8 @@ import StreetViewControl from './components/StreetViewControl'
 import './App.css'
 
 const App = () => {
-  const [count, setCount] = React.useState(0)
   return (
     <div className="App">
-      <p>{count}</p>
-      <button
-        onClick={() => {
-          setCount(count => count + 1)
-        }}
-      >
-        Click
-      </button>
       <DrawingControl />
       <MarkerPanel />
       <OverlayView disableMapHitsAndGestures>

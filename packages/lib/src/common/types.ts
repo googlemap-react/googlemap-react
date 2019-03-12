@@ -71,10 +71,6 @@ export interface GoogleMapAction {
 
 export interface GoogleMapProviderProps {
   children: React.ReactNode
-  useDrawing?: boolean
-  useGeometry?: boolean
-  usePlaces?: boolean
-  useVisualization?: boolean
 }
 
 // Map

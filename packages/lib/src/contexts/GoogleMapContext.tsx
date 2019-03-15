@@ -12,7 +12,6 @@ const initialState = (): GoogleMapState => ({
   map: undefined,
   objects: new Map<string, GoogleMapObject>(),
   places: undefined,
-  searches: new Map<string, google.maps.places.SearchBox>(),
 })
 
 const GoogleMapContext = React.createContext<GoogleMapReducer>({

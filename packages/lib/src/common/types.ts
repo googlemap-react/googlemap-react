@@ -57,7 +57,6 @@ export interface GoogleMapState {
   map?: google.maps.Map
   objects: Map<string, GoogleMapObject>
   places?: google.maps.places.PlacesService
-  searches: Map<string, google.maps.places.SearchBox>
 }
 
 export interface GoogleMapAction {

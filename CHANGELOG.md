@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [0.1.3] - <2019-03-16>
+
+- Remove unused `state.searches`
+
 ## [0.1.2] - <2019-03-08>
 
 ### FIXED

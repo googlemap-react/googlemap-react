@@ -12,7 +12,16 @@ const App = () => {
       <DrawingControl />
       <MarkerPanel />
       <OverlayView disableMapHitsAndGestures>
-        <h2>This is an OverlayView 🙌</h2>
+        <h2>
+          This is an OverlayView
+          <span
+            role="img"
+            title="emoji: hands up"
+            aria-label="jsx-a11y/accessible-emoji"
+          >
+            🙌
+          </span>
+        </h2>
       </OverlayView>
       <div className="Map">
         <SearchBox

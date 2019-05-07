@@ -167,3 +167,7 @@ This app combines Google Map API and Yelp API, helping users search nearby
 businesses.
 
 ![Screenshot](./images/boycott.png)
+
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/googlemap-react/googlemap-react.svg)](https://starchart.cc/googlemap-react/googlemap-react)

@@ -27,7 +27,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "CI=true yarn test:lib --coverage && lint-staged"
+      "pre-commit": "CI=true yarn test:lib --silent --coverage && lint-staged"
     }
   },
   "workspaces": [

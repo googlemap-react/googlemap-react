@@ -8,9 +8,9 @@
   "license": "MIT",
   "dependencies": {
     "@googlemap-react/core": "0.1.3",
-    "next": "8.0.3",
-    "react": "16.8.4",
-    "react-dom": "16.8.4"
+    "next": "8.1.0",
+    "react": "16.8.6",
+    "react-dom": "16.8.6"
   },
   "scripts": {
     "dev": "next",

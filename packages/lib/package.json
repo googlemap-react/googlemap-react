@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@babel/plugin-syntax-typescript": "7.3.3",
-    "@testing-library/react": "^8.0.1",
+    "@testing-library/react": "8.0.1",
     "@types/googlemaps": "3.36.4",
     "@types/jest": "24.0.13",
     "@types/loadjs": "3.5.0",
@@ -58,8 +58,9 @@
     "react-docgen-typescript": "1.12.4",
     "react-dom": "16.8.6",
     "react-scripts": "3.0.1",
-    "react-styleguidist": "8.0.6",
-    "typescript": "3.5.1"
+    "react-styleguidist": "9.1.6",
+    "ts-loader": "6.0.2",
+    "typescript": "3.4.5"
   },
   "scripts": {
     "build": "cp ../../*.md . && rm -rf dist && microbundle --jsx React.createElement --strict && rm -rf .rts2_cache_*",
@@ -67,7 +68,9 @@
     "prepublish": "yarn build",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
-    "test": "react-scripts test"
+    "pretest": "cp tsconfig.json tsconfig.json.bak",
+    "test": "react-scripts test",
+    "posttest": "rm tsconfig.json && mv tsconfig.json.bak tsconfig.json"
   },
   "eslintConfig": {
     "extends": "react-app",

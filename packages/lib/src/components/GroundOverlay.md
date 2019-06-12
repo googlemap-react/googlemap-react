@@ -8,8 +8,7 @@ A wrapper around `google.maps.GroundOverlay`.
 A simple GroundOverlay:
 
 ```jsx
-const {GoogleMapProvider, GroundOverlay, MapBox} = require('../../')
-
+import {GoogleMapProvider, GroundOverlay, MapBox} from '@googlemap-react/core'
 ;<GoogleMapProvider>
   <MapBox
     style={{

@@ -19,13 +19,12 @@ Use this component to add custom controls to the map.
 A simple CustomControl:
 
 ```jsx
-const {
+import {
   CustomControl,
   GoogleMapContext,
   GoogleMapProvider,
   MapBox,
-} = require('../../')
-
+} from '@googlemap-react/core'
 ;<GoogleMapProvider>
   <MapBox
     style={{

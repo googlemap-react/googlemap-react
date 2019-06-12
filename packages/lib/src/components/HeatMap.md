@@ -7,8 +7,7 @@ A wrapper around `google.maps.visualization.HeatMap`.
 A simple HeatMap:
 
 ```jsx
-const {GoogleMapProvider, HeatMap, MapBox} = require('../../')
-
+import {GoogleMapProvider, HeatMap, MapBox} from '@googlemap-react/core'
 ;<GoogleMapProvider>
   <MapBox
     style={{

@@ -8,8 +8,7 @@ A wrapper around `google.maps.Polyline`.
 A simple Polyline:
 
 ```jsx
-const {GoogleMapProvider, MapBox, Polyline} = require('../../')
-
+import {GoogleMapProvider, MapBox, Polyline} from '@googlemap-react/core'
 ;<GoogleMapProvider>
   <MapBox
     style={{

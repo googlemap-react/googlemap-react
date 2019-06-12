@@ -9,8 +9,7 @@ A simple KmlLayer
 ([data source](http://api.flickr.com/services/feeds/geo/?g=322338@N20&lang=en-us&format=feed-georss)):
 
 ```jsx
-const {GoogleMapProvider, KmlLayer, MapBox} = require('../../')
-
+import {GoogleMapProvider, KmlLayer, MapBox} from '@googlemap-react/core'
 ;<GoogleMapProvider>
   <MapBox
     style={{

@@ -17,8 +17,7 @@ A wrapper around `google.map.Map`.
 Here is a simple example:
 
 ```jsx
-const {GoogleMapProvider, MapBox} = require('../../')
-
+import {GoogleMapProvider, MapBox} from '@googlemap-react/core'
 ;<GoogleMapProvider>
   <MapBox
     style={{

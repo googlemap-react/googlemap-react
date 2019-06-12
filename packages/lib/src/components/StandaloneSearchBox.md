@@ -4,8 +4,11 @@ not be placed on the map.
 A simple StandaloneSearchBox:
 
 ```jsx
-const {GoogleMapProvider, MapBox, StandaloneSearchBox} = require('../../')
-
+import {
+  GoogleMapProvider,
+  MapBox,
+  StandaloneSearchBox,
+} from '@googlemap-react/core'
 ;<GoogleMapProvider>
   <MapBox
     style={{

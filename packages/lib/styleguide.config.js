@@ -1,5 +1,8 @@
 module.exports = {
   title: 'googlemap-react',
+  moduleAliases: {
+    '@googlemap-react/core': '../..'
+  },
   sections: [
     {
       name: 'Introduction',
@@ -43,13 +46,20 @@ module.exports = {
     },
   ],
   pagePerSection: true,
-  propsParser: require('react-docgen-typescript').withDefaultConfig({
-    propFilter: prop =>
-      prop.parent === null
-        ? true
-        : prop.parent.fileName.indexOf('node_modules/@types/react') < 0,
-  }).parse,
-  webpackConfig: require('react-scripts/config/webpack.config')('development'),
+  propsParser: require('react-docgen-typescript').parse,
+  webpackConfig: {
+    resolve: {
+      extensions: [".ts", ".tsx"]
+    },
+    module: {
+      rules: [
+        {
+          test: /\.tsx?$/,
+          loader: "ts-loader"
+        },
+      ]
+    }
+  }
 }
 
 // To set default example and usage show mode:

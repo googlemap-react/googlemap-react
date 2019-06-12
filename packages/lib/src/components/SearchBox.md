@@ -23,8 +23,7 @@ A wrapper around `google.maps.places.SearchBox`.
 A simple SearchBox:
 
 ```jsx
-const {GoogleMapProvider, MapBox, SearchBox} = require('../../')
-
+import {GoogleMapProvider, MapBox, SearchBox} from '@googlemap-react/core'
 ;<GoogleMapProvider>
   <MapBox
     style={{

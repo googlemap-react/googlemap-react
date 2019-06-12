@@ -14,8 +14,7 @@ A wrapper around `google.maps.drawing.DrawingManager`.
 A simple DrawingManager:
 
 ```jsx
-const {DrawingManager, GoogleMapProvider, MapBox} = require('../../')
-
+import {DrawingManager, GoogleMapProvider, MapBox} from '@googlemap-react/core'
 ;<GoogleMapProvider>
   <MapBox
     style={{

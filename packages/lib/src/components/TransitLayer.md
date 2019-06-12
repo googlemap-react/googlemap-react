@@ -3,8 +3,7 @@ A wrapper around `google.maps.TransitLayer`.
 Use TransitLayer:
 
 ```jsx
-const {GoogleMapProvider, MapBox, TransitLayer} = require('../../')
-
+import {GoogleMapProvider, MapBox, TransitLayer} from '@googlemap-react/core'
 ;<GoogleMapProvider>
   <MapBox
     style={{

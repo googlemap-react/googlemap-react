@@ -13,8 +13,7 @@ A wrapper around `google.maps.InfoWindow`.
 A simple InfoWindow (without anchor):
 
 ```jsx
-const {GoogleMapProvider, MapBox, InfoWindow} = require('../../')
-
+import {GoogleMapProvider, MapBox, InfoWindow} from '@googlemap-react/core'
 ;<GoogleMapProvider>
   <MapBox
     style={{
@@ -29,8 +28,12 @@ const {GoogleMapProvider, MapBox, InfoWindow} = require('../../')
 An InfoWindow anchored at a Marker:
 
 ```jsx
-const {GoogleMapProvider, MapBox, Marker, InfoWindow} = require('../../')
-
+import {
+  GoogleMapProvider,
+  MapBox,
+  Marker,
+  InfoWindow,
+} from '@googlemap-react/core'
 ;<GoogleMapProvider>
   <MapBox
     style={{
@@ -61,8 +64,7 @@ const {GoogleMapProvider, MapBox, Marker, InfoWindow} = require('../../')
 InfoWindow with children:
 
 ```jsx
-const {GoogleMapProvider, MapBox, InfoWindow} = require('../../')
-
+import {GoogleMapProvider, MapBox, InfoWindow} from '@googlemap-react/core'
 ;<GoogleMapProvider>
   <MapBox
     style={{

@@ -3,8 +3,7 @@ A wrapper around `google.maps.BicyclingLayer`.
 Use BicyclingLayer:
 
 ```jsx
-const {BicyclingLayer, GoogleMapProvider, MapBox} = require('../../')
-
+import {BicyclingLayer, GoogleMapProvider, MapBox} from '@googlemap-react/core'
 ;<GoogleMapProvider>
   <MapBox
     style={{

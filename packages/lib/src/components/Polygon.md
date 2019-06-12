@@ -8,8 +8,7 @@ A wrapper around `google.maps.Polygon`.
 A simple Polygon:
 
 ```jsx
-const {GoogleMapProvider, MapBox, Polygon} = require('../../')
-
+import {GoogleMapProvider, MapBox, Polygon} from '@googlemap-react/core'
 ;<GoogleMapProvider>
   <MapBox
     style={{

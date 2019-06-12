@@ -8,8 +8,7 @@ A wrapper around `google.maps.Circle`.
 A simple Circle:
 
 ```jsx
-const {Circle, GoogleMapProvider, MapBox} = require('../../')
-
+import {Circle, GoogleMapProvider, MapBox} from '@googlemap-react/core'
 ;<GoogleMapProvider>
   <MapBox
     style={{

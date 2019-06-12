@@ -16,8 +16,7 @@ automatically bound to the map.
 A simple StreetView:
 
 ```jsx
-const {GoogleMapProvider, MapBox, StreetView} = require('../../')
-
+import {GoogleMapProvider, MapBox, StreetView} from '@googlemap-react/core'
 ;<GoogleMapProvider>
   <div style={{display: 'flex'}}>
     <MapBox

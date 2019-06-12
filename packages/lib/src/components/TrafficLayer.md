@@ -3,8 +3,7 @@ A wrapper aroound `google.maps.TrafficLayer`.
 Use TrafficLayer:
 
 ```jsx
-const {GoogleMapProvider, MapBox, TrafficLayer} = require('../../')
-
+import {GoogleMapProvider, MapBox, TrafficLayer} from '@googlemap-react/core'
 ;<GoogleMapProvider>
   <MapBox
     style={{

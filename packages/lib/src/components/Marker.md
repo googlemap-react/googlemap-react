@@ -8,8 +8,7 @@ A wrapper around `google.maps.Marker`.
 A simple Marker:
 
 ```jsx
-const {GoogleMapProvider, MapBox, Marker} = require('../../')
-
+import {GoogleMapProvider, MapBox, Marker} from '@googlemap-react/core'
 ;<GoogleMapProvider>
   <MapBox
     style={{

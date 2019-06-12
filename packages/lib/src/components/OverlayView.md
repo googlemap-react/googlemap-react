@@ -18,8 +18,7 @@ A wrapper around `google.maps.OverlayView`.
 A simple OverlayView:
 
 ```jsx
-const {GoogleMapProvider, MapBox, OverlayView} = require('../../')
-
+import {GoogleMapProvider, MapBox, OverlayView} from '@googlemap-react/core'
 ;<GoogleMapProvider>
   <MapBox
     style={{

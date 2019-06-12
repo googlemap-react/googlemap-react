@@ -1,8 +1,8 @@
 import React from 'react'
 import 'jest-dom/extend-expect'
 import loadjs from 'loadjs'
-import 'react-testing-library/cleanup-after-each'
-import {cleanup, render, wait, act} from 'react-testing-library'
+import '@testing-library/react/cleanup-after-each'
+import {cleanup, render, wait, act} from '@testing-library/react'
 import {GoogleMapProvider, MapBox} from '../../..'
 import {defineGlobalVariable} from '../../__test__helpers__'
 

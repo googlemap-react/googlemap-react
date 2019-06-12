@@ -15,15 +15,15 @@
   },
   "devDependencies": {
     "@babel/plugin-syntax-typescript": "7.3.3",
-    "@types/googlemaps": "3.30.19",
-    "@types/jest": "24.0.12",
+    "@types/googlemaps": "3.36.4",
+    "@types/jest": "24.0.13",
     "@types/loadjs": "3.5.0",
-    "@types/node": "12.0.0",
-    "@types/react": "16.8.16",
+    "@types/node": "12.0.8",
+    "@types/react": "16.8.19",
     "@types/react-dom": "16.8.4",
-    "jest-dom": "3.2.0",
-    "react-scripts": "3.0.0",
-    "typescript": "3.4.5"
+    "jest-dom": "3.5.0",
+    "react-scripts": "3.0.1",
+    "typescript": "3.5.1"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,7 +1,7 @@
 import React from 'react'
 import {GoogleMapProvider} from '../GoogleMapContext'
-import 'react-testing-library/cleanup-after-each'
-import {render, cleanup} from 'react-testing-library'
+import '@testing-library/react/cleanup-after-each'
+import {render, cleanup} from '@testing-library/react'
 import {defineGlobalVariable, ActionDispatcher} from '../../__test__helpers__'
 
 defineGlobalVariable()

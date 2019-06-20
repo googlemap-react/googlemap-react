@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [0.1.4] - <2019-06-20>
+
+- Prevent `opts` of `<MapBox>` from being modified by `new google.maps.Map()`.
+
 ## [0.1.3] - <2019-03-16>
 
 - Remove unused `state.searches`

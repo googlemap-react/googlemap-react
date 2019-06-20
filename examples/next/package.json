@@ -1,13 +1,13 @@
 {
   "name": "@googlemap-react/example-next",
   "private": true,
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Next.js example for @googlemap-react",
   "repository": "git@github.com:googlemap-react/googlemap-react.git",
   "author": "Gabriel Wu <qqbbnease1004@126.com>",
   "license": "MIT",
   "dependencies": {
-    "@googlemap-react/core": "0.1.3",
+    "@googlemap-react/core": "0.1.4",
     "next": "8.1.0",
     "react": "16.8.6",
     "react-dom": "16.8.6"

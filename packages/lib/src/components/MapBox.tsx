@@ -76,9 +76,13 @@ const MapBox = ({
   // Load Google Map
   useEffect(() => {
     if (!loaded) return
-    const map = new google.maps.Map(document.getElementById(mapItemId), opts)
+    const stringifiedOpts = JSON.stringify(opts)
+    const map = new google.maps.Map(
+      document.getElementById(mapItemId),
+      JSON.parse(stringifiedOpts),
+    )
     setMap(map)
-    setPrevOpts(JSON.stringify(opts))
+    setPrevOpts(stringifiedOpts)
     if (usePlaces) {
       const places = new google.maps.places.PlacesService(map)
       initMap(map, places)

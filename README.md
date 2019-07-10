@@ -53,7 +53,7 @@ import {
   MapBox,
   Marker,
   Polygon,
-} from '@lucifer1004/react-google-map'
+} from '@googlemap-react/core'
 
 // In your component
 return (
@@ -63,6 +63,10 @@ return (
       opts={{
         center: {lat: 39, lng: 116},
         zoom: 14,
+      }}
+      style={{
+        height: '100vh',
+        width: '100%',
       }}
       useDrawing
       useGeometry

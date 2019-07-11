@@ -1,6 +1,6 @@
 import React from 'react'
 import {act} from 'react-dom/test-utils'
-import 'jest-dom/extend-expect'
+import '@testing-library/jest-dom/extend-expect'
 import '@testing-library/react/cleanup-after-each'
 import {render, wait, cleanup} from '@testing-library/react'
 import {GoogleMapProvider, MapBox, Marker} from '../../..'
@@ -46,7 +46,6 @@ describe('Marker', () => {
               animation: google.maps.Animation.BOUNCE,
               icon: '',
               label: 'test',
-              place: {},
               position: {lat: 39, lng: 116},
               title: 'test',
               zIndex: 10,

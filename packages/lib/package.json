@@ -41,18 +41,18 @@
   },
   "devDependencies": {
     "@babel/plugin-syntax-typescript": "7.3.3",
+    "@testing-library/jest-dom": "^4.0.0",
     "@testing-library/react": "8.0.4",
-    "@types/googlemaps": "3.36.5",
+    "@types/googlemaps": "3.37.0",
     "@types/jest": "24.0.15",
     "@types/loadjs": "3.5.0",
-    "@types/node": "12.0.10",
-    "@types/react": "16.8.22",
+    "@types/node": "12.6.2",
+    "@types/react": "16.8.23",
     "@types/react-dom": "16.8.4",
-    "@types/uuid": "3.4.4",
+    "@types/uuid": "3.4.5",
     "@typescript-eslint/eslint-plugin": "1.11.0",
     "eslint-plugin-prettier": "3.1.0",
     "eslint-plugin-react-hooks": "1.6.1",
-    "jest-dom": "3.5.0",
     "microbundle": "0.11.0",
     "react": "16.8.6",
     "react-docgen-typescript": "1.12.5",
@@ -60,7 +60,7 @@
     "react-scripts": "3.0.1",
     "react-styleguidist": "9.1.11",
     "ts-loader": "6.0.4",
-    "typescript": "3.5.2"
+    "typescript": "3.5.3"
   },
   "scripts": {
     "build": "cp ../../*.md . && rm -rf dist && microbundle --jsx React.createElement --strict && rm -rf .rts2_cache_*",
@@ -68,7 +68,7 @@
     "prepublish": "yarn build",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
-    "pretest": "cp tsconfig.json tsconfig.json.bak",
+    "pretest": "rm -rf dist && cp tsconfig.json tsconfig.json.bak",
     "test": "react-scripts test",
     "posttest": "rm tsconfig.json && mv tsconfig.json.bak tsconfig.json"
   },

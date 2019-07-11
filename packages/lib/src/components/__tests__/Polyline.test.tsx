@@ -1,6 +1,6 @@
 import React from 'react'
 import {act} from 'react-dom/test-utils'
-import 'jest-dom/extend-expect'
+import '@testing-library/jest-dom/extend-expect'
 import '@testing-library/react/cleanup-after-each'
 import {render, wait, cleanup} from '@testing-library/react'
 import {GoogleMapProvider, MapBox, Polyline} from '../../..'

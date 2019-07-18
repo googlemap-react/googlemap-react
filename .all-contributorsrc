@@ -6,6 +6,18 @@
   "commit": false,
   "contributors": [
     {
+      "login": "lucifer1004",
+      "name": "Zihua Wu",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/13583761?v=4",
+      "profile": "https://github.com/lucifer1004",
+      "contributions": [
+        "code",
+        "doc",
+        "example",
+        "maintenance"
+      ]
+    },
+    {
       "login": "MehdiSaffar",
       "name": "Mehdi Saffar",
       "avatar_url": "https://avatars0.githubusercontent.com/u/13124263?v=4",

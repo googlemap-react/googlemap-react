@@ -1,4 +1,5 @@
 # googlemap-react
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
 [![npm package](https://img.shields.io/npm/v/@googlemap-react/core/latest.svg)](https://www.npmjs.com/package/@googlemap-react/core)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -175,3 +176,19 @@ businesses.
 ## Stargazers over time
 
 [![Stargazers over time](https://starchart.cc/googlemap-react/googlemap-react.svg)](https://starchart.cc/googlemap-react/googlemap-react)
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/lucifer1004"><img src="https://avatars2.githubusercontent.com/u/13583761?v=4" width="100px;" alt="Zihua Wu"/><br /><sub><b>Zihua Wu</b></sub></a><br /><a href="https://github.com/googlemap-react/googlemap-react/commits?author=lucifer1004" title="Code">💻</a> <a href="https://github.com/googlemap-react/googlemap-react/commits?author=lucifer1004" title="Documentation">📖</a> <a href="#example-lucifer1004" title="Examples">💡</a> <a href="#maintenance-lucifer1004" title="Maintenance">🚧</a></td>
+  </tr>
+</table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

@@ -1,0 +1,26 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "lucifer1004",
+      "name": "Zihua Wu",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/13583761?v=4",
+      "profile": "https://github.com/lucifer1004",
+      "contributions": [
+        "code",
+        "doc",
+        "example",
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "googlemap-react",
+  "projectOwner": "googlemap-react",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}

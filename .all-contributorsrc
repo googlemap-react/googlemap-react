@@ -34,6 +34,16 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "myleftshoe",
+      "name": "myleftshoe",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/32611040?v=4",
+      "profile": "https://github.com/myleftshoe",
+      "contributions": [
+        "bug",
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7,

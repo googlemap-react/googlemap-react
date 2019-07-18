@@ -186,6 +186,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://github.com/lucifer1004"><img src="https://avatars2.githubusercontent.com/u/13583761?v=4" width="100px;" alt="Zihua Wu"/><br /><sub><b>Zihua Wu</b></sub></a><br /><a href="https://github.com/googlemap-react/googlemap-react/commits?author=lucifer1004" title="Code">💻</a> <a href="https://github.com/googlemap-react/googlemap-react/commits?author=lucifer1004" title="Documentation">📖</a> <a href="#example-lucifer1004" title="Examples">💡</a> <a href="#maintenance-lucifer1004" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://medium.com/CodeNoodles"><img src="https://avatars0.githubusercontent.com/u/13124263?v=4" width="100px;" alt="Mehdi Saffar"/><br /><sub><b>Mehdi Saffar</b></sub></a><br /><a href="#ideas-MehdiSaffar" title="Ideas, Planning, & Feedback">🤔</a></td>
   </tr>
 </table>
 

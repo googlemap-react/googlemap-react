@@ -18,6 +18,18 @@ const BasicSearchBox = ({
     google.maps.places.SearchBox | undefined
   >(undefined)
   const [searchBoxId] = useState(id ? id : `search-box-${uuid()}`)
+  const [container] = useState(
+    document
+      .createRange()
+      .createContextualFragment(
+        ReactDOMServer.renderToString(
+          <input id={searchBoxId} {...restProps} />,
+        ),
+      ).firstElementChild,
+  )
+  const [lastBindingPosition, setLastBindingPosition] = useState(
+    bindingPosition,
+  )
 
   const addSearch = (search: google.maps.places.SearchBox) =>
     dispatch({type: 'add_object', object: search, id: searchBoxId})
@@ -27,23 +39,25 @@ const BasicSearchBox = ({
   useEffect(() => {
     if (state.map === undefined || state.places === undefined) return
     const inputNode = (bindingPosition
-      ? document
-          .createRange()
-          .createContextualFragment(
-            ReactDOMServer.renderToString(
-              <input id={searchBoxId} {...restProps} />,
-            ),
-          ).firstElementChild
+      ? container
       : document.getElementById(searchBoxId)) as HTMLInputElement
     const searchBox = new google.maps.places.SearchBox(inputNode, opts)
     setSearchBox(searchBox)
     addSearch(searchBox)
-    if (bindingPosition)
+    if (bindingPosition) {
+      if (bindingPosition !== lastBindingPosition) {
+        const last =
+          state.map.controls[google.maps.ControlPosition[lastBindingPosition!]]
+        const lastArray = last.getArray()
+        last.removeAt(lastArray.findIndex(element => element === container))
+        setLastBindingPosition(bindingPosition)
+      }
       state.map.controls[google.maps.ControlPosition[bindingPosition]].push(
         inputNode,
       )
+    }
     return () => removeSearch()
-  }, [state.places])
+  }, [state.places, bindingPosition])
 
   // Register google map event listeners
   useGoogleListener(searchBox, [

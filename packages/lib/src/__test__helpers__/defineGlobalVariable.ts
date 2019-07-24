@@ -1,5 +1,15 @@
 import {EventEmitter} from 'events'
 
+class MVCArray<T> {
+  array: Array<T>
+  getArray = () => this.array
+  removeAt = (index: number) => this.array.splice(index, 1)
+  push = (element: T) => this.array.push(element)
+  constructor(array: Array<T>) {
+    this.array = array
+  }
+}
+
 // layers
 
 class Layer {
@@ -121,7 +131,7 @@ class LatLng {
 }
 
 class Map {
-  controls: Array<Node[]>
+  controls: MVCArray<Node>[]
   opts: google.maps.MapOptions
   streetView?: google.maps.StreetViewPanorama
   getStreetView = () => this.streetView
@@ -133,7 +143,7 @@ class Map {
   }
   constructor(mapDiv: HTMLElement, opts: google.maps.MapOptions) {
     this.opts = opts
-    this.controls = Array(ControlPosition.TOP_RIGHT + 1).fill([])
+    this.controls = Array(ControlPosition.TOP_RIGHT + 1).fill(new MVCArray([]))
   }
 }
 

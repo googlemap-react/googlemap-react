@@ -27,7 +27,7 @@ describe('SearchBox', () => {
         <GoogleMapProvider>
           <MapBox apiKey="FAKE_KEY" usePlaces />
           <SearchBox
-            bindingPosition="TOP_CENTER"
+            bindingPosition="TOP_RIGHT"
             opts={{
               bounds: {
                 east: -73.98,

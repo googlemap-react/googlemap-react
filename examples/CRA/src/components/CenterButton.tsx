@@ -4,7 +4,7 @@ import {CustomControl, GoogleMapContext} from '../lib'
 const CenterButton = () => {
   const {state} = useContext(GoogleMapContext)
   return (
-    <CustomControl>
+    <CustomControl bindingPosition="TOP_RIGHT">
       <button
         onClick={() => {
           state.map &&

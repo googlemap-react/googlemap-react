@@ -1,7 +1,7 @@
 import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
 import '@testing-library/react/cleanup-after-each'
-import {render, cleanup, wait} from '@testing-library/react'
+import {render, cleanup, wait, act} from '@testing-library/react'
 import {CustomControl, GoogleMapProvider, MapBox} from '../../..'
 import {defineGlobalVariable} from '../../__test__helpers__'
 
@@ -13,14 +13,25 @@ describe('CustomControl', () => {
   })
 
   it('can be rendered', async () => {
-    const {container} = render(
+    const {container, rerender} = render(
       <GoogleMapProvider>
         <MapBox apiKey="FAKE_KEY" />
-        <CustomControl>
+        <CustomControl bindingPosition="LEFT_TOP">
           <p>This is a custom control</p>
         </CustomControl>
       </GoogleMapProvider>,
     )
+
+    act(() => {
+      rerender(
+        <GoogleMapProvider>
+          <MapBox apiKey="FAKE_KEY" />
+          <CustomControl bindingPosition="BOTTOM_CENTER">
+            <p>This is a custom control</p>
+          </CustomControl>
+        </GoogleMapProvider>,
+      )
+    })
 
     await wait(() => {
       expect(container.innerHTML).not.toMatch('Loading...')

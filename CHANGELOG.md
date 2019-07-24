@@ -1,10 +1,20 @@
 # CHANGELOG
 
+## [0.1.5] - <2019-07-24>
+
+### FIXED
+
+- (#14) Update bindingPosition of `CustomControl`/`SearchBox` on prop change.
+
 ## [0.1.4] - <2019-06-20>
+
+### FIXED
 
 - Prevent `opts` of `<MapBox>` from being modified by `new google.maps.Map()`.
 
 ## [0.1.3] - <2019-03-16>
+
+### FIXED
 
 - Remove unused `state.searches`
 

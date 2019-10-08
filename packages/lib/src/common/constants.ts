@@ -80,6 +80,10 @@ export const DEFAULT_SEARCH_BOX_OPTIONS: google.maps.places.SearchBoxOptions = {
   bounds: NYC_RECTANGLE,
 }
 
+export const DEFAULT_AUTOCOMPLETE_OPTIONS: google.maps.places.AutocompleteOptions = {
+  bounds: NYC_RECTANGLE,
+}
+
 export const DEFAULT_STREET_VIEW_OPTIONS: google.maps.StreetViewPanoramaOptions = {
   position: NYC_LATLNG,
 }

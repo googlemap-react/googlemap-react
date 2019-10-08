@@ -31,11 +31,13 @@ export declare type GoogleMapObjectWithSetOptions =
   | google.maps.StreetViewPanorama
   | google.maps.KmlLayer
   | google.maps.drawing.DrawingManager
+  | google.maps.places.Autocomplete
 
 export declare type GoogleMapObject =
   | GoogleMapObjectWithSetMap
   | google.maps.StreetViewPanorama
   | google.maps.places.SearchBox
+  | google.maps.places.Autocomplete
 
 declare type MapPanes =
   | 'floatPane'
@@ -267,7 +269,7 @@ export interface GroundOverlayProps {
   onDoubleClick?: (event: google.maps.MouseEvent) => any
 }
 
-// SearchBox
+// Autocomplete
 
 declare type ControlPositionName =
   | 'BOTTOM_CENTER'
@@ -282,6 +284,26 @@ declare type ControlPositionName =
   | 'TOP_CENTER'
   | 'TOP_LEFT'
   | 'TOP_RIGHT'
+
+export interface StandaloneAutocompleteProps
+  extends React.DetailedHTMLProps<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  > {
+  id?: string
+  opts?: google.maps.places.AutocompleteOptions
+  onPlaceChanged?: () => any
+}
+
+export interface BasicAutocompleteProps extends StandaloneAutocompleteProps {
+  bindingPosition?: ControlPositionName
+}
+
+export interface AutocompleteProps extends StandaloneAutocompleteProps {
+  bindingPosition: ControlPositionName
+}
+
+// SearchBox
 
 export interface StandaloneSearchBoxProps
   extends React.DetailedHTMLProps<

@@ -206,6 +206,17 @@ class Rectangle {
   }
 }
 
+class Autocomplete {
+  opts?: google.maps.places.AutocompleteOptions
+  setOptions = (opts: google.maps.StreetViewPanoramaOptions) => {
+    this.opts = opts
+  }
+  constructor(
+    inputNode: HTMLInputElement,
+    opts?: google.maps.places.AutocompleteOptions,
+  ) {}
+}
+
 class SearchBox {
   bounds?: google.maps.LatLngBoundsLiteral
   setBounds = (bounds: google.maps.LatLngBoundsLiteral) => {
@@ -328,6 +339,7 @@ const defineGlobalVariable = () => {
           },
         },
         places: {
+          Autocomplete: Autocomplete,
           PlacesService: PlacesService,
           SearchBox: SearchBox,
         },

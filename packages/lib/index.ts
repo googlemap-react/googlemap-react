@@ -1,3 +1,7 @@
+export {default as Autocomplete} from './src/components/Autocomplete'
+export {
+  default as StandaloneAutocomplete,
+} from './src/components/StandaloneAutocomplete'
 export {default as BicyclingLayer} from './src/components/BicyclingLayer'
 export {default as Circle} from './src/components/Circle'
 export {default as CustomControl} from './src/components/CustomControl'

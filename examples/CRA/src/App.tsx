@@ -1,5 +1,5 @@
 import React from 'react'
-import {MapBox, OverlayView, TrafficLayer, SearchBox} from './lib'
+import {Autocomplete, MapBox, OverlayView, TrafficLayer, SearchBox} from './lib'
 import CenterButton from './components/CenterButton'
 import DrawingControl from './components/DrawingControl'
 import MarkerPanel from './components/MarkerPanel'
@@ -24,6 +24,20 @@ const App = () => {
         </h2>
       </OverlayView>
       <div className="Map">
+        <Autocomplete
+          id="autocomplete"
+          placeholder="Autocomplete..."
+          bindingPosition="TOP_CENTER"
+          opts={{
+            bounds: {
+              east: -73.98,
+              west: -73.985,
+              north: 40.706,
+              south: 40.702,
+            },
+            fields: ['address_components'],
+          }}
+        />
         <SearchBox
           id="search-box"
           placeholder="Search..."

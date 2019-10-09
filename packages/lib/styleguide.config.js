@@ -38,7 +38,7 @@ module.exports = {
     },
     {
       name: 'Places',
-      components: './src/components/{SearchBox,StandaloneSearchBox}.tsx',
+      components: './src/components/{Autocomplete,StandaloneAutocomplete,SearchBox,StandaloneSearchBox}.tsx',
     },
     {
       name: 'Visualization',

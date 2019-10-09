@@ -1,6 +1,6 @@
 # googlemap-react
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors)
 
 [![npm package](https://img.shields.io/npm/v/@googlemap-react/core/latest.svg)](https://www.npmjs.com/package/@googlemap-react/core)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -191,6 +191,7 @@ Thanks goes to these wonderful people
     <td align="center"><a href="https://github.com/MehdiSaffar"><img src="https://avatars0.githubusercontent.com/u/13124263?v=4" width="100px;" alt="Mehdi Saffar"/><br /><sub><b>Mehdi Saffar</b></sub></a><br /><a href="#ideas-MehdiSaffar" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://github.com/gilpanal"><img src="https://avatars0.githubusercontent.com/u/3600540?v=4" width="100px;" alt="gilpanal"/><br /><sub><b>gilpanal</b></sub></a><br /><a href="https://github.com/googlemap-react/googlemap-react/issues?q=author%3Agilpanal" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/myleftshoe"><img src="https://avatars1.githubusercontent.com/u/32611040?v=4" width="100px;" alt="myleftshoe"/><br /><sub><b>myleftshoe</b></sub></a><br /><a href="https://github.com/googlemap-react/googlemap-react/issues?q=author%3Amyleftshoe" title="Bug reports">🐛</a> <a href="#ideas-myleftshoe" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/Flyr1Q"><img src="https://avatars2.githubusercontent.com/u/6223499?v=4" width="100px;" alt="Esimov Miras"/><br /><sub><b>Esimov Miras</b></sub></a><br /><a href="https://github.com/googlemap-react/googlemap-react/commits?author=Flyr1Q" title="Code">💻</a> <a href="https://github.com/googlemap-react/googlemap-react/commits?author=Flyr1Q" title="Documentation">📖</a></td>
   </tr>
 </table>
 

@@ -44,6 +44,16 @@
         "bug",
         "ideas"
       ]
+    },
+    {
+      "login": "Flyr1Q",
+      "name": "Esimov Miras",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/6223499?v=4",
+      "profile": "https://github.com/Flyr1Q",
+      "contributions": [
+        "code",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,

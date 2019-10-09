@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [0.1.6] - <2019-10-09>
+
+### ADDED
+
+- (#22) Add AutoComplete.
+
 ## [0.1.5] - <2019-07-24>
 
 ### FIXED

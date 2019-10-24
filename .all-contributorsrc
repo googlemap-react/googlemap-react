@@ -54,6 +54,15 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "jessqnnguyen",
+      "name": "Jessica Nguyen",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/4889102?v=4",
+      "profile": "https://github.com/jessqnnguyen",
+      "contributions": [
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7,

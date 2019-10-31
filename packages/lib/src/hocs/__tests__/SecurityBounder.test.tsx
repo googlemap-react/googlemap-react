@@ -1,6 +1,5 @@
 import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
-import '@testing-library/react/cleanup-after-each'
 import {render, cleanup, wait} from '@testing-library/react'
 import {GoogleMapProvider, MapBox, withSecurityBounder} from '../../..'
 import {defineGlobalVariable} from '../../__test__helpers__'
@@ -18,10 +17,6 @@ if (google && google.maps) {
 }
 
 describe('Security Bounder', () => {
-  afterEach(() => {
-    cleanup()
-  })
-
   it('sets a time interval if google.maps.visualization is not ready', async () => {
     const {container} = render(
       <GoogleMapProvider>

@@ -1,6 +1,5 @@
 import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
-import '@testing-library/react/cleanup-after-each'
 import {render, cleanup, wait} from '@testing-library/react'
 import {GoogleMapProvider, MapBox, OverlayView} from '../../..'
 import {defineGlobalVariable} from '../../__test__helpers__'
@@ -24,10 +23,6 @@ const mockAddDrawRemove = async (container: HTMLElement) => {
 }
 
 describe('OverlayView', () => {
-  afterEach(() => {
-    cleanup()
-  })
-
   it('can be rendered', async () => {
     const {container} = render(
       <GoogleMapProvider>

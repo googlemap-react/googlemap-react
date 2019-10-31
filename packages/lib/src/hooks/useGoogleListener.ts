@@ -2,7 +2,7 @@ import {useEffect} from 'react'
 
 interface GoogleMapEvent {
   name: string
-  handler?: Function
+  handler?: (...args: any[]) => void
 }
 
 const useGoogleListener = (

@@ -1,21 +1,23 @@
 import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
 import loadjs from 'loadjs'
-import '@testing-library/react/cleanup-after-each'
-import {cleanup, render, wait, act} from '@testing-library/react'
+import {render, wait, act} from '@testing-library/react'
 import {GoogleMapProvider, MapBox} from '../../..'
 import {defineGlobalVariable} from '../../__test__helpers__'
 
 defineGlobalVariable()
 
 describe('MapBox', () => {
+  let mockConsoleError
+
   beforeEach(() => {
+    console.error = jest.fn()
+    mockConsoleError = console.error
     jest.spyOn(console, 'error')
     jest.spyOn(loadjs, 'reset')
   })
 
   afterEach(() => {
-    cleanup()
     jest.restoreAllMocks()
   })
 
@@ -27,7 +29,7 @@ describe('MapBox', () => {
     )
     expect(container.innerHTML).toMatch('Loading...')
     await wait(() => {
-      expect(console.error).toHaveBeenCalledWith(
+      expect(mockConsoleError).toHaveBeenCalledWith(
         'Unable to fetch Google Map sdk',
       )
     })

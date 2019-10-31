@@ -208,7 +208,7 @@ class Rectangle {
 
 class Autocomplete {
   opts?: google.maps.places.AutocompleteOptions
-  setOptions = (opts: google.maps.StreetViewPanoramaOptions) => {
+  setOptions = (opts: google.maps.places.AutocompleteOptions) => {
     this.opts = opts
   }
   constructor(

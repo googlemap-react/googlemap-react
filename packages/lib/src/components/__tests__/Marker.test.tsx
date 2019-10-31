@@ -1,7 +1,6 @@
 import React from 'react'
 import {act} from 'react-dom/test-utils'
 import '@testing-library/jest-dom/extend-expect'
-import '@testing-library/react/cleanup-after-each'
 import {render, wait, cleanup} from '@testing-library/react'
 import {GoogleMapProvider, MapBox, Marker} from '../../..'
 import {defineGlobalVariable} from '../../__test__helpers__'
@@ -9,10 +8,6 @@ import {defineGlobalVariable} from '../../__test__helpers__'
 defineGlobalVariable()
 
 describe('Marker', () => {
-  afterEach(() => {
-    cleanup()
-  })
-
   it('can be rendered', async () => {
     const {container} = render(
       <GoogleMapProvider>

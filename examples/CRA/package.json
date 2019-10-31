@@ -7,23 +7,23 @@
   "author": "Gabriel Wu <qqbbnease1004@126.com>",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "8.0.0",
-    "loadjs": "3.6.1",
-    "react": "16.8.6",
-    "react-dom": "16.8.6",
-    "uuid": "3.3.2"
+    "dotenv": "8.2.0",
+    "loadjs": "4.0.1",
+    "react": "16.11.0",
+    "react-dom": "16.11.0",
+    "uuid": "3.3.3"
   },
   "devDependencies": {
     "@babel/plugin-syntax-typescript": "7.3.3",
-    "@types/googlemaps": "3.37.0",
-    "@types/jest": "24.0.15",
-    "@types/loadjs": "3.5.0",
-    "@types/node": "12.6.8",
-    "@types/react": "16.8.23",
-    "@types/react-dom": "16.8.5",
+    "@types/googlemaps": "3.38.0",
+    "@types/jest": "24.0.21",
+    "@types/loadjs": "4.0.0",
+    "@types/node": "12.12.3",
+    "@types/react": "16.9.11",
+    "@types/react-dom": "16.9.3",
     "jest-dom": "4.0.0",
-    "react-scripts": "3.0.1",
-    "typescript": "3.5.3"
+    "react-scripts": "3.2.0",
+    "typescript": "3.6.4"
   },
   "scripts": {
     "start": "react-scripts start",

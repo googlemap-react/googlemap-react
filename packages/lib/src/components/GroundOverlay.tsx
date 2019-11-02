@@ -68,7 +68,7 @@ const GroundOverlay = ({
     const clickable = opts.clickable === undefined ? true : opts.clickable
     if (
       opts.url !== groundOverlay.getUrl() ||
-      !Object.is(JSON.stringify(opts.bounds), JSON.stringify(prevBounds)) ||
+      JSON.stringify(opts.bounds) !== JSON.stringify(prevBounds) ||
       clickable !== prevClickable
     ) {
       removeGroundOverlay()

@@ -25,8 +25,8 @@ const mockAddDrawRemove = async (container: HTMLElement) => {
 describe('OverlayView', () => {
   it('can be rendered', async () => {
     const {container} = render(
-      <GoogleMapProvider>
-        <MapBox apiKey="FAKE_KEY" />
+      <GoogleMapProvider apiKey="FAKE_KEY">
+        <MapBox />
         <OverlayView>
           <p>This is an overlay</p>
         </OverlayView>
@@ -38,8 +38,8 @@ describe('OverlayView', () => {
 
   it('can disable map hits', async () => {
     const {container} = render(
-      <GoogleMapProvider>
-        <MapBox apiKey="FAKE_KEY" />
+      <GoogleMapProvider apiKey="FAKE_KEY">
+        <MapBox />
         <OverlayView disableMapHits>
           <p>This is an overlay with hits disabled</p>
         </OverlayView>
@@ -51,8 +51,8 @@ describe('OverlayView', () => {
 
   it('can disable map hits and gestures', async () => {
     const {container} = render(
-      <GoogleMapProvider>
-        <MapBox apiKey="FAKE_KEY" />
+      <GoogleMapProvider apiKey="FAKE_KEY">
+        <MapBox />
         <OverlayView disableMapHitsAndGestures>
           <h1>This is an overlay with hits and gestures disabled</h1>
         </OverlayView>

@@ -1,25 +1,14 @@
 import React, {useEffect, useContext, useState} from 'react'
 import uuid from 'uuid/v1'
-import {useGoogleAPI, useGoogleListener, useMemoizedOptions} from '../hooks'
-import {
-  DEFAULT_MAP_OPTIONS,
-  DEFAULT_MAP_STYLE,
-  GOOGLE_MAP_LIBRARY_NAMES,
-} from '../common/constants'
+import {useGoogleListener, useMemoizedOptions} from '../hooks'
+import {DEFAULT_MAP_OPTIONS, DEFAULT_MAP_STYLE} from '../common/constants'
 import {MapBoxProps} from '../common/types'
 import {GoogleMapContext} from '../contexts/GoogleMapContext'
 
 const MapBox = ({
-  apiKey = '',
-  language,
-  region,
   className,
   style = DEFAULT_MAP_STYLE,
   opts = DEFAULT_MAP_OPTIONS,
-  useDrawing = false,
-  useGeometry = false,
-  usePlaces = false,
-  useVisualization = false,
   LoadedComponent = null,
   LoadingComponent = <p>Loading...</p>,
   onBoundsChanged,
@@ -42,7 +31,7 @@ const MapBox = ({
   onZoomChanged,
 }: MapBoxProps) => {
   // Get access to the Google Map context
-  const {dispatch} = useContext(GoogleMapContext)
+  const {state, dispatch} = useContext(GoogleMapContext)
   const [prevOpts, setPrevOpts] = useState('')
   const [map, setMap] = useState<google.maps.Map | undefined>(undefined)
 
@@ -56,26 +45,13 @@ const MapBox = ({
   ) => dispatch({type: 'init_map', map: map, places: places})
   const reset = () => dispatch({type: 'reset'})
 
-  // Construct the library param
-  const libraries = {
-    drawing: useDrawing,
-    geometry: useGeometry,
-    places: usePlaces,
-    visualization: useVisualization,
-  }
-  const libraryParam = GOOGLE_MAP_LIBRARY_NAMES.filter(
-    library => libraries[library],
-  ).join(',')
-  const loaded = useGoogleAPI({
-    apiKey: apiKey,
-    libraryParam: libraryParam === '' ? '' : `&libraries=${libraryParam}`,
-    languageParam: language === undefined ? '' : `&language=${language}`,
-    regionParam: region === undefined ? '' : `&region=${region}`,
-  })
+  useEffect(() => {
+    dispatch({type: 'load_api'})
+  }, [])
 
   // Load Google Map
   useEffect(() => {
-    if (!loaded) return
+    if (!state.apiLoaded) return
     const stringifiedOpts = JSON.stringify(opts)
     const map = new google.maps.Map(
       document.getElementById(mapItemId),
@@ -83,12 +59,12 @@ const MapBox = ({
     )
     setMap(map)
     setPrevOpts(stringifiedOpts)
-    if (usePlaces) {
+    if (state.usePlaces) {
       const places = new google.maps.places.PlacesService(map)
       initMap(map, places)
     } else initMap(map)
     return () => reset()
-  }, [loaded])
+  }, [state.apiLoaded])
 
   // Register event listeners
   useGoogleListener(map, [
@@ -118,7 +94,7 @@ const MapBox = ({
   // Render <MapBox>
   return (
     <>
-      {loaded ? LoadedComponent : LoadingComponent}
+      {state.apiLoaded ? LoadedComponent : LoadingComponent}
       {typeof document !== 'undefined' ? (
         <div id={mapItemId} style={style} className={className} />
       ) : null}

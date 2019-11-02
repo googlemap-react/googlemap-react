@@ -1,6 +1,7 @@
 import React from 'react'
+import {act} from 'react-dom/test-utils'
 import '@testing-library/jest-dom/extend-expect'
-import {cleanup, render, wait, act} from '@testing-library/react'
+import {render, wait} from '@testing-library/react'
 import {GoogleMapProvider, MapBox, StreetView} from '../../..'
 import {defineGlobalVariable} from '../../__test__helpers__'
 
@@ -9,8 +10,8 @@ defineGlobalVariable()
 describe('StreetView', () => {
   it('can be rendered', async () => {
     const {container, rerender} = render(
-      <GoogleMapProvider>
-        <MapBox apiKey="FAKE_KEY" />
+      <GoogleMapProvider apiKey="FAKE_KEY">
+        <MapBox />
         <StreetView />
       </GoogleMapProvider>,
     )
@@ -19,8 +20,8 @@ describe('StreetView', () => {
     })
     act(() =>
       rerender(
-        <GoogleMapProvider>
-          <MapBox apiKey="FAKE_KEY" />
+        <GoogleMapProvider apiKey="FAKE_KEY">
+          <MapBox />
           <StreetView opts={{position: {lat: 39, lng: 116}}} />
         </GoogleMapProvider>,
       ),

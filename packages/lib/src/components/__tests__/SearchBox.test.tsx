@@ -9,8 +9,8 @@ defineGlobalVariable()
 describe('SearchBox', () => {
   it('can be rendered', async () => {
     const {container, rerender} = render(
-      <GoogleMapProvider>
-        <MapBox apiKey="FAKE_KEY" usePlaces />
+      <GoogleMapProvider apiKey="FAKE_KEY" usePlaces>
+        <MapBox />
         <SearchBox bindingPosition="TOP_CENTER" />
       </GoogleMapProvider>,
     )
@@ -19,8 +19,8 @@ describe('SearchBox', () => {
     })
     act(() => {
       rerender(
-        <GoogleMapProvider>
-          <MapBox apiKey="FAKE_KEY" usePlaces />
+        <GoogleMapProvider apiKey="FAKE_KEY" usePlaces>
+          <MapBox />
           <SearchBox
             bindingPosition="TOP_RIGHT"
             opts={{
@@ -37,8 +37,8 @@ describe('SearchBox', () => {
     })
     act(() => {
       rerender(
-        <GoogleMapProvider>
-          <MapBox apiKey="FAKE_KEY" usePlaces />
+        <GoogleMapProvider apiKey="FAKE_KEY" usePlaces>
+          <MapBox />
         </GoogleMapProvider>,
       )
     })

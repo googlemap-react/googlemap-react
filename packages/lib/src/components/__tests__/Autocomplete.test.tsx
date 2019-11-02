@@ -9,8 +9,8 @@ defineGlobalVariable()
 describe('Autocomplete', () => {
   it('can be rendered', async () => {
     const {container, rerender} = render(
-      <GoogleMapProvider>
-        <MapBox apiKey="FAKE_KEY" usePlaces />
+      <GoogleMapProvider apiKey="FAKE_KEY" usePlaces>
+        <MapBox />
         <Autocomplete bindingPosition="TOP_CENTER" />
       </GoogleMapProvider>,
     )
@@ -19,8 +19,8 @@ describe('Autocomplete', () => {
     })
     act(() => {
       rerender(
-        <GoogleMapProvider>
-          <MapBox apiKey="FAKE_KEY" usePlaces />
+        <GoogleMapProvider apiKey="FAKE_KEY" usePlaces>
+          <MapBox />
           <Autocomplete
             bindingPosition="TOP_RIGHT"
             opts={{
@@ -38,8 +38,8 @@ describe('Autocomplete', () => {
     })
     act(() => {
       rerender(
-        <GoogleMapProvider>
-          <MapBox apiKey="FAKE_KEY" usePlaces />
+        <GoogleMapProvider apiKey="FAKE_KEY" usePlaces>
+          <MapBox />
         </GoogleMapProvider>,
       )
     })

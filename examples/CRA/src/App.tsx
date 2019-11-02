@@ -44,7 +44,6 @@ const App = () => {
           bindingPosition="BOTTOM_CENTER"
         />
         <MapBox
-          apiKey={process.env.REACT_APP_GOOGLE_MAP_API_KEY || ''}
           opts={{
             center: {
               lat: 40.7128,
@@ -54,9 +53,6 @@ const App = () => {
             streetViewControl: true,
             zoom: 14,
           }}
-          useDrawing
-          usePlaces
-          useVisualization
         />
         <CenterButton />
         <StreetViewControl />

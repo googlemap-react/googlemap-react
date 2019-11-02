@@ -37,9 +37,13 @@ const BasicStreetView = ({
   const removeStreetView = () =>
     dispatch({type: 'remove_object', id: streetViewId})
 
+  useEffect(() => {
+    dispatch({type: 'load_api'})
+  }, [])
+
   // Handle StreetView creation and unregister
   useEffect(() => {
-    if (state.map === undefined) return
+    if (!state.apiLoaded || (bindToMap && state.map === undefined)) return
     const streetView = new google.maps.StreetViewPanorama(
       document.getElementById(streetViewId) as HTMLElement,
       opts,
@@ -48,7 +52,7 @@ const BasicStreetView = ({
     setPrevOpts(JSON.stringify(opts))
     addStreetView(streetView)
     if (bindToMap) {
-      state.map.setOptions({streetView: streetView})
+      state.map!.setOptions({streetView: streetView})
     }
     return () => {
       if (bindToMap) {
@@ -56,7 +60,7 @@ const BasicStreetView = ({
       }
       removeStreetView()
     }
-  }, [state.map])
+  }, [state.apiLoaded, state.map])
 
   useGoogleListener(streetView, [
     {name: 'closeclick', handler: onCloseClick},

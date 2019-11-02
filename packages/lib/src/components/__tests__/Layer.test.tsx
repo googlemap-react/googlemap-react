@@ -10,8 +10,8 @@ describe('Layer', () => {
   it('of same type cannot be added twice', async () => {
     const check = async () => {
       const {container} = render(
-        <GoogleMapProvider>
-          <MapBox apiKey="FAKE_KEY" />
+        <GoogleMapProvider apiKey="FAKE_KEY">
+          <MapBox />
           <Layer type="bicycling" />
           <Layer type="bicycling" />
         </GoogleMapProvider>,

@@ -37,9 +37,18 @@ const BasicAutocomplete = ({
   const removeAutocomplete = () =>
     dispatch({type: 'remove_object', id: autocompleteId})
 
+  useEffect(() => {
+    dispatch({type: 'load_api'})
+  }, [])
+
   // Create google.maps.places.Autocomplete
   useEffect(() => {
-    if (state.map === undefined || state.places === undefined) return
+    if (
+      bindingPosition &&
+      (state.map === undefined || state.places === undefined)
+    )
+      return
+    if (!state.apiLoaded) return
     const inputNode = (bindingPosition
       ? container
       : document.getElementById(autocompleteId)) as HTMLInputElement
@@ -49,18 +58,19 @@ const BasicAutocomplete = ({
     setPrevOpts(JSON.stringify(opts))
     if (bindingPosition) {
       if (bindingPosition !== lastBindingPosition) {
-        const last =
-          state.map.controls[google.maps.ControlPosition[lastBindingPosition!]]
+        const last = state.map!.controls[
+          google.maps.ControlPosition[lastBindingPosition!]
+        ]
         const lastArray = last.getArray()
         last.removeAt(lastArray.findIndex(element => element === container))
         setLastBindingPosition(bindingPosition)
       }
-      state.map.controls[google.maps.ControlPosition[bindingPosition]].push(
+      state.map!.controls[google.maps.ControlPosition[bindingPosition]].push(
         inputNode,
       )
     }
     return () => removeAutocomplete()
-  }, [state.places, bindingPosition])
+  }, [state.apiLoaded, state.places, bindingPosition])
 
   // Register google map event listeners
   useGoogleListener(autocomplete, [

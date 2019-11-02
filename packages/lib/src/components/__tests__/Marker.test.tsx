@@ -10,8 +10,8 @@ defineGlobalVariable()
 describe('Marker', () => {
   it('can be rendered', async () => {
     const {container} = render(
-      <GoogleMapProvider>
-        <MapBox apiKey="FAKE_KEY" />
+      <GoogleMapProvider apiKey="FAKE_KEY">
+        <MapBox />
         <Marker />
       </GoogleMapProvider>,
     )
@@ -23,8 +23,8 @@ describe('Marker', () => {
 
   it('updates options after rerender', async () => {
     const {container, rerender} = render(
-      <GoogleMapProvider>
-        <MapBox apiKey="FAKE_KEY" />
+      <GoogleMapProvider apiKey="FAKE_KEY">
+        <MapBox />
         <Marker opts={{position: {lat: 39, lng: 116}}} />
       </GoogleMapProvider>,
     )
@@ -33,10 +33,9 @@ describe('Marker', () => {
     })
     act(() =>
       rerender(
-        <GoogleMapProvider>
-          <MapBox apiKey="FAKE_KEY" />
+        <GoogleMapProvider apiKey="FAKE_KEY">
+          <MapBox />
           <Marker
-            id="my-marker"
             opts={{
               animation: google.maps.Animation.BOUNCE,
               icon: '',
@@ -49,22 +48,5 @@ describe('Marker', () => {
         </GoogleMapProvider>,
       ),
     )
-  })
-
-  it('of same id cannot be added twice', async () => {
-    const check = async () => {
-      const {container} = render(
-        <GoogleMapProvider>
-          <MapBox apiKey="FAKE_KEY" />
-          <Marker id="marker" />
-          <Marker id="marker" />
-        </GoogleMapProvider>,
-      )
-      await wait(() => {
-        expect(container.innerHTML).not.toMatch('Loading...')
-      })
-    }
-
-    expect(check()).rejects.toEqual(new Error('The id has already been taken'))
   })
 })

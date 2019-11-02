@@ -9,8 +9,8 @@ defineGlobalVariable()
 describe('BicyclingLayer', () => {
   it('can be rendered', async () => {
     const {container} = render(
-      <GoogleMapProvider>
-        <MapBox apiKey="FAKE_KEY" />
+      <GoogleMapProvider apiKey="FAKE_KEY">
+        <MapBox />
         <BicyclingLayer />
       </GoogleMapProvider>,
     )

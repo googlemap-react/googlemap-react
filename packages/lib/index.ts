@@ -28,7 +28,6 @@ export {default as StreetView} from './src/components/StreetView'
 export {default as TrafficLayer} from './src/components/TrafficLayer'
 export {default as TransitLayer} from './src/components/TransitLayer'
 export {default as withSecurityBounder} from './src/hocs/SecurityBounder'
-export {default as useGoogleAPI} from './src/hooks/useGoogleAPI'
 export {default as useGoogleListener} from './src/hooks/useGoogleListener'
 export {
   GoogleMapProvider,

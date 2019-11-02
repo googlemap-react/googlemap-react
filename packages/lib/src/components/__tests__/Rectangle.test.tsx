@@ -1,7 +1,7 @@
 import React from 'react'
 import {act} from 'react-dom/test-utils'
 import '@testing-library/jest-dom/extend-expect'
-import {render, wait, cleanup} from '@testing-library/react'
+import {render, wait} from '@testing-library/react'
 import {GoogleMapProvider, MapBox, Rectangle} from '../../..'
 import {defineGlobalVariable} from '../../__test__helpers__'
 
@@ -10,8 +10,8 @@ defineGlobalVariable()
 describe('Rectangle', () => {
   it('can be rendered', async () => {
     const {container, rerender} = render(
-      <GoogleMapProvider>
-        <MapBox apiKey="FAKE_KEY" />
+      <GoogleMapProvider apiKey="FAKE_KEY">
+        <MapBox />
         <Rectangle />
       </GoogleMapProvider>,
     )
@@ -20,8 +20,8 @@ describe('Rectangle', () => {
     })
     act(() =>
       rerender(
-        <GoogleMapProvider>
-          <MapBox apiKey="FAKE_KEY" />
+        <GoogleMapProvider apiKey="FAKE_KEY">
+          <MapBox />
           <Rectangle
             opts={{
               bounds: {
@@ -35,22 +35,5 @@ describe('Rectangle', () => {
         </GoogleMapProvider>,
       ),
     )
-  })
-
-  it('of same id cannot be added twice', async () => {
-    const check = async () => {
-      const {container} = render(
-        <GoogleMapProvider>
-          <MapBox apiKey="FAKE_KEY" />
-          <Rectangle id="rectangle" />
-          <Rectangle id="rectangle" />
-        </GoogleMapProvider>,
-      )
-      await wait(() => {
-        expect(container.innerHTML).not.toMatch('Loading...')
-      })
-    }
-
-    expect(check()).rejects.toEqual(new Error('The id has already been taken'))
   })
 })

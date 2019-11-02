@@ -16,8 +16,8 @@ describe('GroundOverlay', () => {
       south: 38.8,
     }
     const {container, rerender} = render(
-      <GoogleMapProvider>
-        <MapBox apiKey="FAKE_KEY" />
+      <GoogleMapProvider apiKey="FAKE_KEY">
+        <MapBox />
         <GroundOverlay />
       </GoogleMapProvider>,
     )
@@ -27,7 +27,7 @@ describe('GroundOverlay', () => {
     act(() =>
       rerender(
         <GoogleMapProvider>
-          <MapBox apiKey="FAKE_KEY" />
+          <MapBox />
           <GroundOverlay
             opts={{
               url: 'https://placehold.it/256x256',
@@ -40,8 +40,8 @@ describe('GroundOverlay', () => {
     ),
       act(() =>
         rerender(
-          <GoogleMapProvider>
-            <MapBox apiKey="FAKE_KEY" />
+          <GoogleMapProvider apiKey="FAKE_KEY">
+            <MapBox />
             <GroundOverlay
               opts={{
                 url: 'https://placehold.it/512x512',
@@ -55,8 +55,8 @@ describe('GroundOverlay', () => {
       )
     act(() =>
       rerender(
-        <GoogleMapProvider>
-          <MapBox apiKey="FAKE_KEY" />
+        <GoogleMapProvider apiKey="FAKE_KEY">
+          <MapBox />
           <GroundOverlay
             opts={{
               url: 'https://placehold.it/512x512',
@@ -70,8 +70,8 @@ describe('GroundOverlay', () => {
     )
     act(() =>
       rerender(
-        <GoogleMapProvider>
-          <MapBox apiKey="FAKE_KEY" />
+        <GoogleMapProvider apiKey="FAKE_KEY">
+          <MapBox />
           <GroundOverlay
             opts={{
               url: 'https://placehold.it/512x512',
@@ -81,22 +81,5 @@ describe('GroundOverlay', () => {
         </GoogleMapProvider>,
       ),
     )
-  })
-
-  it('of same id cannot be added twice', async () => {
-    const check = async () => {
-      const {container} = render(
-        <GoogleMapProvider>
-          <MapBox apiKey="FAKE_KEY" />
-          <GroundOverlay id="ground-overlay" />
-          <GroundOverlay id="ground-overlay" />
-        </GoogleMapProvider>,
-      )
-      await wait(() => {
-        expect(container.innerHTML).not.toMatch('Loading...')
-      })
-    }
-
-    expect(check()).rejects.toEqual(new Error('The id has already been taken'))
   })
 })

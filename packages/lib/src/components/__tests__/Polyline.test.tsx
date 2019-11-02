@@ -1,7 +1,7 @@
 import React from 'react'
 import {act} from 'react-dom/test-utils'
 import '@testing-library/jest-dom/extend-expect'
-import {render, wait, cleanup} from '@testing-library/react'
+import {render, wait} from '@testing-library/react'
 import {GoogleMapProvider, MapBox, Polyline} from '../../..'
 import {defineGlobalVariable} from '../../__test__helpers__'
 
@@ -10,8 +10,8 @@ defineGlobalVariable()
 describe('Polyline', () => {
   it('can be rendered', async () => {
     const {container, rerender} = render(
-      <GoogleMapProvider>
-        <MapBox apiKey="FAKE_KEY" />
+      <GoogleMapProvider apiKey="FAKE_KEY">
+        <MapBox />
         <Polyline />
       </GoogleMapProvider>,
     )
@@ -20,8 +20,8 @@ describe('Polyline', () => {
     })
     act(() =>
       rerender(
-        <GoogleMapProvider>
-          <MapBox apiKey="FAKE_KEY" />
+        <GoogleMapProvider apiKey="FAKE_KEY">
+          <MapBox />
           <Polyline
             opts={{
               path: [
@@ -34,22 +34,5 @@ describe('Polyline', () => {
         </GoogleMapProvider>,
       ),
     )
-  })
-
-  it('of same id cannot be added twice', async () => {
-    const check = async () => {
-      const {container} = render(
-        <GoogleMapProvider>
-          <MapBox apiKey="FAKE_KEY" />
-          <Polyline id="polyline" />
-          <Polyline id="polyline" />
-        </GoogleMapProvider>,
-      )
-      await wait(() => {
-        expect(container.innerHTML).not.toMatch('Loading...')
-      })
-    }
-
-    expect(check()).rejects.toEqual(new Error('The id has already been taken'))
   })
 })

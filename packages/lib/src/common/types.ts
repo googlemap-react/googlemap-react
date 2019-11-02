@@ -52,10 +52,20 @@ export declare type Layers = 'bicycling' | 'traffic' | 'transit'
 
 export interface GoogleMapReducer {
   state: GoogleMapState
-  dispatch: React.Dispatch<GoogleMapAction>
+  dispatch: any
+  // dispatch: React.Dispatch<GoogleMapAction>
 }
 
 export interface GoogleMapState {
+  apiKey: string
+  language: string
+  region: string
+  useDrawing: boolean
+  useGeometry: boolean
+  usePlaces: boolean
+  useVisualization: boolean
+  shouldLoadAPI: boolean
+  apiLoaded: boolean
   map?: google.maps.Map
   objects: Map<string, GoogleMapObject>
   places?: google.maps.places.PlacesService
@@ -71,21 +81,21 @@ export interface GoogleMapAction {
 }
 
 export interface GoogleMapProviderProps {
-  children: React.ReactNode
-}
-
-// Map
-
-export interface MapBoxProps {
   apiKey?: string
-  className?: string
-  style?: React.CSSProperties
   language?: string
   region?: string
   useDrawing?: boolean
   useGeometry?: boolean
   usePlaces?: boolean
   useVisualization?: boolean
+  children: React.ReactNode
+}
+
+// Map
+
+export interface MapBoxProps {
+  className?: string
+  style?: React.CSSProperties
   LoadingComponent?: React.ReactNode
   LoadedComponent?: React.ReactNode
   opts?: google.maps.MapOptions

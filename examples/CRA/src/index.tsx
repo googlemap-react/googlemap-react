@@ -5,8 +5,15 @@ import {GoogleMapProvider} from './lib'
 require('dotenv').config()
 
 ReactDOM.render(
-  <GoogleMapProvider>
-    <App />
-  </GoogleMapProvider>,
+  <div>
+    <GoogleMapProvider
+      apiKey={process.env.REACT_APP_GOOGLE_MAP_API_KEY || ''}
+      useDrawing
+      usePlaces
+      useVisualization
+    >
+      <App />
+    </GoogleMapProvider>
+  </div>,
   document.getElementById('root'),
 )

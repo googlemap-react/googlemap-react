@@ -10,8 +10,8 @@ defineGlobalVariable()
 describe('KmlLayer', () => {
   it('can be rendered', async () => {
     const {container, rerender} = render(
-      <GoogleMapProvider>
-        <MapBox apiKey="FAKE_KEY" />
+      <GoogleMapProvider apiKey="FAKE_KEY">
+        <MapBox />
         <KmlLayer />
       </GoogleMapProvider>,
     )
@@ -20,8 +20,8 @@ describe('KmlLayer', () => {
     })
     act(() =>
       rerender(
-        <GoogleMapProvider>
-          <MapBox apiKey="FAKE_KEY" />
+        <GoogleMapProvider apiKey="FAKE_KEY">
+          <MapBox />
           <KmlLayer
             opts={{
               screenOverlays: false,
@@ -30,22 +30,5 @@ describe('KmlLayer', () => {
         </GoogleMapProvider>,
       ),
     )
-  })
-
-  it('of same id cannot be added twice', async () => {
-    const check = async () => {
-      const {container} = render(
-        <GoogleMapProvider>
-          <MapBox apiKey="FAKE_KEY" />
-          <KmlLayer id="kml-layer" />
-          <KmlLayer id="kml-layer" />
-        </GoogleMapProvider>,
-      )
-      await wait(() => {
-        expect(container.innerHTML).not.toMatch('Loading...')
-      })
-    }
-
-    expect(check()).rejects.toEqual(new Error('The id has already been taken'))
   })
 })

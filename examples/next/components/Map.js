@@ -3,12 +3,11 @@ import DrawingControl from './DrawingControl'
 
 export default () => {
   return (
-    <GoogleMapProvider>
+    <GoogleMapProvider apiKey="" useDrawing>
       <MapBox 
         style={{
           height: '100vh'
         }}
-        useDrawing
       />
       <DrawingControl />
     </GoogleMapProvider>

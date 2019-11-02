@@ -1,6 +1,6 @@
 import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
-import {render, cleanup, wait, act} from '@testing-library/react'
+import {render, wait, act} from '@testing-library/react'
 import {GoogleMapProvider, HeatMap, MapBox} from '../../..'
 import {defineGlobalVariable} from '../../__test__helpers__'
 
@@ -9,8 +9,8 @@ defineGlobalVariable()
 describe('HeatMap', () => {
   it('can be rendered', async () => {
     const {container, rerender} = render(
-      <GoogleMapProvider>
-        <MapBox apiKey="FAKE_KEY" useVisualization />
+      <GoogleMapProvider apiKey="FAKE_KEY" useVisualization>
+        <MapBox />
         <HeatMap />
       </GoogleMapProvider>,
     )
@@ -19,8 +19,8 @@ describe('HeatMap', () => {
     })
     act(() => {
       rerender(
-        <GoogleMapProvider>
-          <MapBox apiKey="FAKE_KEY" useVisualization />
+        <GoogleMapProvider apiKey="FAKE_KEY" useVisualization>
+          <MapBox />
           <HeatMap
             id="heat-map"
             opts={{

@@ -35,9 +35,18 @@ const BasicSearchBox = ({
     dispatch({type: 'add_object', object: search, id: searchBoxId})
   const removeSearch = () => dispatch({type: 'remove_object', id: searchBoxId})
 
+  useEffect(() => {
+    dispatch({type: 'load_api'})
+  }, [])
+
   // Create google.maps.places.SearchBox
   useEffect(() => {
-    if (state.map === undefined || state.places === undefined) return
+    if (
+      bindingPosition &&
+      (state.map === undefined || state.places === undefined)
+    )
+      return
+    if (!state.apiLoaded) return
     const inputNode = (bindingPosition
       ? container
       : document.getElementById(searchBoxId)) as HTMLInputElement
@@ -46,18 +55,19 @@ const BasicSearchBox = ({
     addSearch(searchBox)
     if (bindingPosition) {
       if (bindingPosition !== lastBindingPosition) {
-        const last =
-          state.map.controls[google.maps.ControlPosition[lastBindingPosition!]]
+        const last = state.map!.controls[
+          google.maps.ControlPosition[lastBindingPosition!]
+        ]
         const lastArray = last.getArray()
         last.removeAt(lastArray.findIndex(element => element === container))
         setLastBindingPosition(bindingPosition)
       }
-      state.map.controls[google.maps.ControlPosition[bindingPosition]].push(
+      state.map!.controls[google.maps.ControlPosition[bindingPosition]].push(
         inputNode,
       )
     }
     return () => removeSearch()
-  }, [state.places, bindingPosition])
+  }, [state.apiLoaded, state.map, bindingPosition])
 
   // Register google map event listeners
   useGoogleListener(searchBox, [
@@ -68,7 +78,7 @@ const BasicSearchBox = ({
   useEffect(() => {
     if (searchBox === undefined || opts.bounds === undefined) return
     searchBox.setBounds(opts.bounds)
-  }, [opts.bounds])
+  }, [searchBox, opts.bounds])
 
   return bindingPosition ? null : <input id={searchBoxId} {...restProps} />
 }

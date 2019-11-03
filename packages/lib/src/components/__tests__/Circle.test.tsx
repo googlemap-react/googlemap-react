@@ -7,10 +7,6 @@ import {defineGlobalVariable} from '../../__test__helpers__'
 
 defineGlobalVariable()
 
-beforeAll(() => {
-  console.error = jest.fn()
-})
-
 describe('Circle', () => {
   it('can be rendered', async () => {
     const {container, rerender} = render(

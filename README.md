@@ -59,9 +59,14 @@ import {
 
 // In your component
 return (
-  <GoogleMapProvider>
+  <GoogleMapProvider
+    apiKey="YOUR_GOOGLE_MAP_API_KEY"
+    useDrawing
+    useGeometry
+    usePlaces
+    useVisualization
+  >
     <MapBox
-      apiKey="YOUR_GOOGLE_MAP_API_KEY"
       opts={{
         center: {lat: 39, lng: 116},
         zoom: 14,
@@ -70,10 +75,6 @@ return (
         height: '100vh',
         width: '100%',
       }}
-      useDrawing
-      useGeometry
-      usePlaces
-      useVisualization
       onCenterChanged={() => {
         console.log('The center of the map has changed.')
       }}

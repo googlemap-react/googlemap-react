@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [0.2.0] - Unrelease
+
+### CHANGED
+
+- API loading related properties has been moved to `GoogleMapProvider`.
+
 ## [0.1.6] - <2019-10-09>
 
 ### ADDED

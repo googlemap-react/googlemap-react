@@ -52,8 +52,7 @@ export declare type Layers = 'bicycling' | 'traffic' | 'transit'
 
 export interface GoogleMapReducer {
   state: GoogleMapState
-  dispatch: any
-  // dispatch: React.Dispatch<GoogleMapAction>
+  dispatch: React.Dispatch<GoogleMapAction>
 }
 
 export interface GoogleMapState {

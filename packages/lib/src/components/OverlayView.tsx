@@ -23,7 +23,7 @@ const OverlayView = ({
 
   const {state} = useContext(GoogleMapContext)
   const [container] = useState<HTMLDivElement>(document.createElement('div'))
-  const [_overlay, setOverlay] = useState<google.maps.OverlayView | undefined>(
+  const [overlay, setOverlay] = useState<google.maps.OverlayView | undefined>(
     undefined,
   )
 
@@ -52,15 +52,6 @@ const OverlayView = ({
         // Use an ugly cast to avoid package bundle issue
       ;(overlay.getPanes() as any)[pane].appendChild(container)
     }
-    overlay.draw = () => {
-      const location = overlay
-        .getProjection()
-        .fromLatLngToDivPixel(
-          new google.maps.LatLng(position.lat, position.lng),
-        )
-      container.style.left = JSON.stringify(location.x) + 'px'
-      container.style.top = JSON.stringify(location.y) + 'px'
-    }
     overlay.onRemove = () => {
       container.parentNode && container.parentNode.removeChild(container)
     }
@@ -68,6 +59,24 @@ const OverlayView = ({
     setOverlay(overlay)
     return () => overlay.setMap(null)
   }, [state.map])
+
+  useEffect(() => {
+    console.log(position)
+    if (overlay !== undefined) {
+      overlay.setMap(null)
+      overlay.draw = () => {
+        console.log(position)
+        const location = overlay
+          .getProjection()
+          .fromLatLngToDivPixel(
+            new google.maps.LatLng(position.lat, position.lng),
+          )
+        container.style.left = JSON.stringify(location.x) + 'px'
+        container.style.top = JSON.stringify(location.y) + 'px'
+      }
+      overlay.setMap(state.map as google.maps.Map)
+    }
+  }, [position])
 
   return ReactDOM.createPortal(children, container)
 }

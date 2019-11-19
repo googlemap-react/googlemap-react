@@ -11,7 +11,10 @@ const App = () => {
     <div className="App">
       <DrawingControl />
       <MarkerPanel />
-      <OverlayView disableMapHitsAndGestures>
+      <OverlayView
+        disableMapHitsAndGestures
+        position={{lat: 40.7128, lng: -74.006}}
+      >
         <h2>
           This is an OverlayView
           <span

@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [0.1.7] - <2019-11-20>
+
+### FIXED
+
+- (#32) OverlayView now responds to position change.
+
 ## [0.1.6] - <2019-10-09>
 
 ### ADDED

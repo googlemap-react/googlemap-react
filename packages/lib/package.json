@@ -1,6 +1,6 @@
 {
   "name": "@googlemap-react/core",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Easier-to-use Google Map & React integration",
   "repository": "git@github.com:googlemap-react/googlemap-react.git",
   "author": "Gabriel Wu <qqbbnease1004@126.com>",

@@ -72,6 +72,15 @@
       "contributions": [
         "ideas"
       ]
+    },
+    {
+      "login": "T-Flynn",
+      "name": "zhouyihu",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/32189234?v=4",
+      "profile": "https://github.com/T-Flynn",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,

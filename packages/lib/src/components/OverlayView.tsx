@@ -61,7 +61,6 @@ const OverlayView = ({
   }, [state.map])
 
   useEffect(() => {
-    console.log(position)
     if (overlay !== undefined) {
       overlay.setMap(null)
       overlay.draw = () => {

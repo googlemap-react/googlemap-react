@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [0.1.8] - <2019-11-20>
+
+### FIXED
+
+- Remove `console.log` in OverlayView.
+
 ## [0.1.7] - <2019-11-20>
 
 ### FIXED

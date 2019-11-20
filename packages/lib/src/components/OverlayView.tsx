@@ -64,7 +64,6 @@ const OverlayView = ({
     if (overlay !== undefined) {
       overlay.setMap(null)
       overlay.draw = () => {
-        console.log(position)
         const location = overlay
           .getProjection()
           .fromLatLngToDivPixel(
@@ -75,7 +74,7 @@ const OverlayView = ({
       }
       overlay.setMap(state.map as google.maps.Map)
     }
-  }, [position])
+  }, [overlay, position])
 
   return ReactDOM.createPortal(children, container)
 }

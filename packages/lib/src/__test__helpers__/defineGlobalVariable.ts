@@ -279,8 +279,19 @@ class OverlayView {
       y: 0,
     }),
   })
-  setMap = (map: google.maps.Map) => {
+  setMap = (map: google.maps.Map | null) => {
     this.map = map
+    if (map == null)
+      setTimeout(() => {
+        this.onRemove()
+      }, 100)
+    else
+      setTimeout(() => {
+        this.onAdd()
+        setTimeout(() => {
+          this.draw()
+        }, 100)
+      }, 100)
   }
   static preventMapHitsFrom = (el: HTMLElement) => {}
   static preventMapHitsAndGesturesFrom = (el: HTMLElement) => {}
@@ -290,15 +301,6 @@ class OverlayView {
     this.overlayMouseTarget = document.createElement('div')
     document.body.appendChild(this.overlayLayer)
     document.body.appendChild(this.overlayMouseTarget)
-    setTimeout(() => {
-      this.onAdd()
-      setTimeout(() => {
-        this.draw()
-        setTimeout(() => {
-          this.onRemove()
-        }, 100)
-      }, 100)
-    }, 100)
   }
 }
 

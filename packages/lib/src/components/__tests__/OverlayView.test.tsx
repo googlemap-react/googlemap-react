@@ -1,12 +1,13 @@
 import React from 'react'
+import {act} from 'react-dom/test-utils'
 import '@testing-library/jest-dom/extend-expect'
-import {render, cleanup, wait} from '@testing-library/react'
+import {render, wait} from '@testing-library/react'
 import {GoogleMapProvider, MapBox, OverlayView} from '../../..'
 import {defineGlobalVariable} from '../../__test__helpers__'
 
 defineGlobalVariable()
 
-const mockAddDrawRemove = async (container: HTMLElement) => {
+const mockOverlayDraw = async (container: HTMLElement) => {
   await wait(() => {
     expect(container.innerHTML).not.toMatch('Loading...')
   })
@@ -15,16 +16,11 @@ const mockAddDrawRemove = async (container: HTMLElement) => {
   await wait(() => {
     expect(document.body.innerHTML).toMatch('This is an overlay')
   })
-
-  // wait for mocked onRemove to be triggered
-  await wait(() => {
-    expect(document.body.innerHTML).not.toMatch('This is an overlay')
-  })
 }
 
 describe('OverlayView', () => {
   it('can be rendered', async () => {
-    const {container} = render(
+    const {container, rerender} = render(
       <GoogleMapProvider>
         <MapBox apiKey="FAKE_KEY" />
         <OverlayView>
@@ -33,7 +29,20 @@ describe('OverlayView', () => {
       </GoogleMapProvider>,
     )
 
-    await mockAddDrawRemove(container)
+    await mockOverlayDraw(container)
+
+    act(() =>
+      rerender(
+        <GoogleMapProvider>
+          <MapBox apiKey="FAKE_KEY" />
+          <OverlayView position={{lat: 30, lng: 110}}>
+            <p>This is an overlay</p>
+          </OverlayView>
+        </GoogleMapProvider>,
+      ),
+    )
+
+    await mockOverlayDraw(container)
   })
 
   it('can disable map hits', async () => {
@@ -46,7 +55,7 @@ describe('OverlayView', () => {
       </GoogleMapProvider>,
     )
 
-    await mockAddDrawRemove(container)
+    await mockOverlayDraw(container)
   })
 
   it('can disable map hits and gestures', async () => {
@@ -59,6 +68,6 @@ describe('OverlayView', () => {
       </GoogleMapProvider>,
     )
 
-    await mockAddDrawRemove(container)
+    await mockOverlayDraw(container)
   })
 })

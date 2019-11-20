@@ -13,9 +13,7 @@
     "resolveJsonModule": true,
     "jsx": "react",
     "declaration": true,
-    "composite": true,
-    "isolatedModules": true,
-    "noEmit": true
+    "composite": true
   },
   "include": ["src", "index.ts"],
   "exclude": ["src/**/__tests__", "src/__test__helpers__"],

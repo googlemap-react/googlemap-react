@@ -1,6 +1,6 @@
 # googlemap-react
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors)
 
 [![npm package](https://img.shields.io/npm/v/@googlemap-react/core/latest.svg)](https://www.npmjs.com/package/@googlemap-react/core)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -194,6 +194,9 @@ Thanks goes to these wonderful people
     <td align="center"><a href="https://github.com/Flyr1Q"><img src="https://avatars2.githubusercontent.com/u/6223499?v=4" width="100px;" alt="Esimov Miras"/><br /><sub><b>Esimov Miras</b></sub></a><br /><a href="https://github.com/googlemap-react/googlemap-react/commits?author=Flyr1Q" title="Code">💻</a> <a href="https://github.com/googlemap-react/googlemap-react/commits?author=Flyr1Q" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/jessqnnguyen"><img src="https://avatars2.githubusercontent.com/u/4889102?v=4" width="100px;" alt="Jessica Nguyen"/><br /><sub><b>Jessica Nguyen</b></sub></a><br /><a href="#ideas-jessqnnguyen" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://github.com/plamenh"><img src="https://avatars3.githubusercontent.com/u/14073311?v=4" width="100px;" alt="Plamen Hristov"/><br /><sub><b>Plamen Hristov</b></sub></a><br /><a href="#ideas-plamenh" title="Ideas, Planning, & Feedback">🤔</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/T-Flynn"><img src="https://avatars3.githubusercontent.com/u/32189234?v=4" width="100px;" alt="zhouyihu"/><br /><sub><b>zhouyihu</b></sub></a><br /><a href="https://github.com/googlemap-react/googlemap-react/issues?q=author%3AT-Flynn" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 

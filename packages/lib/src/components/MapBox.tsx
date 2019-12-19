@@ -45,7 +45,7 @@ const MapBox = ({
   const [prevOpts, setPrevOpts] = useState('')
   const [map, setMap] = useState<google.maps.Map | undefined>(undefined)
 
-  const mapElementRef = useRef<HTMLDivElement>(null);
+  const mapElementRef = useRef<HTMLDivElement>(null)
 
   // Define action dispatchers
   const initMap = (

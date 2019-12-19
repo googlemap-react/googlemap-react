@@ -1,5 +1,4 @@
-import React, {useEffect, useContext, useState} from 'react'
-import uuid from 'uuid/v1'
+import React, {useEffect, useContext, useState, useRef} from 'react'
 import {useGoogleAPI, useGoogleListener, useMemoizedOptions} from '../hooks'
 import {
   DEFAULT_MAP_OPTIONS,
@@ -46,8 +45,7 @@ const MapBox = ({
   const [prevOpts, setPrevOpts] = useState('')
   const [map, setMap] = useState<google.maps.Map | undefined>(undefined)
 
-  // Generate a random id for the DOM node where Google Map will be inserted
-  const [mapItemId] = useState(`map-${uuid()}`)
+  const mapElementRef = useRef<HTMLDivElement>(null)
 
   // Define action dispatchers
   const initMap = (
@@ -78,7 +76,7 @@ const MapBox = ({
     if (!loaded) return
     const stringifiedOpts = JSON.stringify(opts)
     const map = new google.maps.Map(
-      document.getElementById(mapItemId),
+      mapElementRef.current,
       JSON.parse(stringifiedOpts),
     )
     setMap(map)
@@ -120,7 +118,7 @@ const MapBox = ({
     <>
       {loaded ? LoadedComponent : LoadingComponent}
       {typeof document !== 'undefined' ? (
-        <div id={mapItemId} style={style} className={className} />
+        <div ref={mapElementRef} style={style} className={className} />
       ) : null}
     </>
   )

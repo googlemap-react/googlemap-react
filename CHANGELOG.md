@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [0.1.10] - <2019-12-20>
+
+### CHANGED
+
+- Use `ref` instead of relying on `uuid` in `MapBox`
+
 ## [0.1.9] - <2019-11-20>
 
 ### FIXED

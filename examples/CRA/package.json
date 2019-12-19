@@ -1,29 +1,29 @@
 {
   "name": "@googlemap-react/example-cra",
   "private": true,
-  "version": "0.1.7",
+  "version": "0.1.10",
   "description": "CRA example for @googlemap-react",
   "repository": "git@github.com:googlemap-react/googlemap-react.git",
   "author": "Gabriel Wu <qqbbnease1004@126.com>",
   "license": "MIT",
   "dependencies": {
     "dotenv": "8.2.0",
-    "loadjs": "4.0.1",
+    "loadjs": "4.2.0",
     "react": "16.12.0",
     "react-dom": "16.12.0",
     "uuid": "3.3.3"
   },
   "devDependencies": {
-    "@babel/plugin-syntax-typescript": "7.3.3",
-    "@types/googlemaps": "3.38.0",
-    "@types/jest": "24.0.23",
+    "@babel/plugin-syntax-typescript": "7.7.4",
+    "@types/googlemaps": "3.38.1",
+    "@types/jest": "24.0.24",
     "@types/loadjs": "4.0.0",
-    "@types/node": "12.12.11",
-    "@types/react": "16.9.11",
+    "@types/node": "12.12.21",
+    "@types/react": "16.9.16",
     "@types/react-dom": "16.9.4",
     "jest-dom": "4.0.0",
-    "react-scripts": "3.2.0",
-    "typescript": "3.7.2"
+    "react-scripts": "3.3.0",
+    "typescript": "3.7.3"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -184,22 +184,26 @@ Thanks goes to these wonderful people
 ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/lucifer1004"><img src="https://avatars2.githubusercontent.com/u/13583761?v=4" width="100px;" alt="Zihua Wu"/><br /><sub><b>Zihua Wu</b></sub></a><br /><a href="https://github.com/googlemap-react/googlemap-react/commits?author=lucifer1004" title="Code">💻</a> <a href="https://github.com/googlemap-react/googlemap-react/commits?author=lucifer1004" title="Documentation">📖</a> <a href="#example-lucifer1004" title="Examples">💡</a> <a href="#maintenance-lucifer1004" title="Maintenance">🚧</a></td>
-    <td align="center"><a href="https://github.com/MehdiSaffar"><img src="https://avatars0.githubusercontent.com/u/13124263?v=4" width="100px;" alt="Mehdi Saffar"/><br /><sub><b>Mehdi Saffar</b></sub></a><br /><a href="#ideas-MehdiSaffar" title="Ideas, Planning, & Feedback">🤔</a></td>
-    <td align="center"><a href="https://github.com/gilpanal"><img src="https://avatars0.githubusercontent.com/u/3600540?v=4" width="100px;" alt="gilpanal"/><br /><sub><b>gilpanal</b></sub></a><br /><a href="https://github.com/googlemap-react/googlemap-react/issues?q=author%3Agilpanal" title="Bug reports">🐛</a></td>
-    <td align="center"><a href="https://github.com/myleftshoe"><img src="https://avatars1.githubusercontent.com/u/32611040?v=4" width="100px;" alt="myleftshoe"/><br /><sub><b>myleftshoe</b></sub></a><br /><a href="https://github.com/googlemap-react/googlemap-react/issues?q=author%3Amyleftshoe" title="Bug reports">🐛</a> <a href="#ideas-myleftshoe" title="Ideas, Planning, & Feedback">🤔</a></td>
-    <td align="center"><a href="https://github.com/Flyr1Q"><img src="https://avatars2.githubusercontent.com/u/6223499?v=4" width="100px;" alt="Esimov Miras"/><br /><sub><b>Esimov Miras</b></sub></a><br /><a href="https://github.com/googlemap-react/googlemap-react/commits?author=Flyr1Q" title="Code">💻</a> <a href="https://github.com/googlemap-react/googlemap-react/commits?author=Flyr1Q" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://github.com/jessqnnguyen"><img src="https://avatars2.githubusercontent.com/u/4889102?v=4" width="100px;" alt="Jessica Nguyen"/><br /><sub><b>Jessica Nguyen</b></sub></a><br /><a href="#ideas-jessqnnguyen" title="Ideas, Planning, & Feedback">🤔</a></td>
-    <td align="center"><a href="https://github.com/plamenh"><img src="https://avatars3.githubusercontent.com/u/14073311?v=4" width="100px;" alt="Plamen Hristov"/><br /><sub><b>Plamen Hristov</b></sub></a><br /><a href="#ideas-plamenh" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/lucifer1004"><img src="https://avatars2.githubusercontent.com/u/13583761?v=4" width="100px;" alt=""/><br /><sub><b>Zihua Wu</b></sub></a><br /><a href="https://github.com/googlemap-react/googlemap-react/commits?author=lucifer1004" title="Code">💻</a> <a href="https://github.com/googlemap-react/googlemap-react/commits?author=lucifer1004" title="Documentation">📖</a> <a href="#example-lucifer1004" title="Examples">💡</a> <a href="#maintenance-lucifer1004" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://github.com/MehdiSaffar"><img src="https://avatars0.githubusercontent.com/u/13124263?v=4" width="100px;" alt=""/><br /><sub><b>Mehdi Saffar</b></sub></a><br /><a href="#ideas-MehdiSaffar" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/gilpanal"><img src="https://avatars0.githubusercontent.com/u/3600540?v=4" width="100px;" alt=""/><br /><sub><b>gilpanal</b></sub></a><br /><a href="https://github.com/googlemap-react/googlemap-react/issues?q=author%3Agilpanal" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/myleftshoe"><img src="https://avatars1.githubusercontent.com/u/32611040?v=4" width="100px;" alt=""/><br /><sub><b>myleftshoe</b></sub></a><br /><a href="https://github.com/googlemap-react/googlemap-react/issues?q=author%3Amyleftshoe" title="Bug reports">🐛</a> <a href="#ideas-myleftshoe" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/Flyr1Q"><img src="https://avatars2.githubusercontent.com/u/6223499?v=4" width="100px;" alt=""/><br /><sub><b>Esimov Miras</b></sub></a><br /><a href="https://github.com/googlemap-react/googlemap-react/commits?author=Flyr1Q" title="Code">💻</a> <a href="https://github.com/googlemap-react/googlemap-react/commits?author=Flyr1Q" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/jessqnnguyen"><img src="https://avatars2.githubusercontent.com/u/4889102?v=4" width="100px;" alt=""/><br /><sub><b>Jessica Nguyen</b></sub></a><br /><a href="#ideas-jessqnnguyen" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/plamenh"><img src="https://avatars3.githubusercontent.com/u/14073311?v=4" width="100px;" alt=""/><br /><sub><b>Plamen Hristov</b></sub></a><br /><a href="#ideas-plamenh" title="Ideas, Planning, & Feedback">🤔</a></td>
   </tr>
   <tr>
-    <td align="center"><a href="https://github.com/T-Flynn"><img src="https://avatars3.githubusercontent.com/u/32189234?v=4" width="100px;" alt="zhouyihu"/><br /><sub><b>zhouyihu</b></sub></a><br /><a href="https://github.com/googlemap-react/googlemap-react/issues?q=author%3AT-Flynn" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/T-Flynn"><img src="https://avatars3.githubusercontent.com/u/32189234?v=4" width="100px;" alt=""/><br /><sub><b>zhouyihu</b></sub></a><br /><a href="https://github.com/googlemap-react/googlemap-react/issues?q=author%3AT-Flynn" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/isBatak"><img src="https://avatars2.githubusercontent.com/u/4128883?v=4" width="100px;" alt=""/><br /><sub><b>Ivica Batinić</b></sub></a><br /><a href="https://github.com/googlemap-react/googlemap-react/commits?author=isBatak" title="Code">💻</a></td>
   </tr>
 </table>
 
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the

@@ -81,11 +81,21 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "isBatak",
+      "name": "Ivica Batinić",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/4128883?v=4",
+      "profile": "https://github.com/isBatak",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
   "projectName": "googlemap-react",
   "projectOwner": "googlemap-react",
   "repoType": "github",
-  "repoHost": "https://github.com"
+  "repoHost": "https://github.com",
+  "skipCi": true
 }

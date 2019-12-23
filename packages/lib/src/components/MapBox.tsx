@@ -117,9 +117,7 @@ const MapBox = ({
   return (
     <>
       {loaded ? LoadedComponent : LoadingComponent}
-      {typeof document !== 'undefined' ? (
-        <div ref={mapElementRef} style={style} className={className} />
-      ) : null}
+      <div ref={mapElementRef} style={style} className={className} />
     </>
   )
 }

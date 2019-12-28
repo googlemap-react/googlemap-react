@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [0.1.11] - <2019-12-28>
+
+### FIXED
+
+- (#1) Handle SSR of `MapBox` and `CustomControl`
+
 ## [0.1.10] - <2019-12-20>
 
 ### CHANGED

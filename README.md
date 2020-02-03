@@ -54,6 +54,7 @@ import {
   InfoWindow,
   MapBox,
   Marker,
+  OverlayView,
   Polygon,
 } from '@googlemap-react/core'
 

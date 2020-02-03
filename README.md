@@ -200,6 +200,7 @@ Thanks goes to these wonderful people
   <tr>
     <td align="center"><a href="https://github.com/T-Flynn"><img src="https://avatars3.githubusercontent.com/u/32189234?v=4" width="100px;" alt=""/><br /><sub><b>zhouyihu</b></sub></a><br /><a href="https://github.com/googlemap-react/googlemap-react/issues?q=author%3AT-Flynn" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/isBatak"><img src="https://avatars2.githubusercontent.com/u/4128883?v=4" width="100px;" alt=""/><br /><sub><b>Ivica Batinić</b></sub></a><br /><a href="https://github.com/googlemap-react/googlemap-react/commits?author=isBatak" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/moeka802"><img src="https://avatars0.githubusercontent.com/u/42276835?v=4" width="100px;" alt=""/><br /><sub><b>moeka802</b></sub></a><br /><a href="https://github.com/googlemap-react/googlemap-react/issues?q=author%3Amoeka802" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 

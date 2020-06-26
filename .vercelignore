@@ -6,11 +6,11 @@ public
 src
 .gitignore
 .lintstagedrc
-.nowignore
+.vercelignore
 .prettierrc
 *.md
 *.map
-now.json
+vercel.json
 package.json
 tsconfig.json
 *.log

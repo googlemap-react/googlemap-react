@@ -16,10 +16,10 @@ script:
   - yarn test:lib --silent --coverage
   - bash <(curl -s https://codecov.io/bash) -f packages/lib/coverage/coverage-final.json
 
-before_deploy: yarn global add now # Install Now CLI on Travis
+before_deploy: yarn global add vercel # Install Vercel CLI on Travis
 deploy:
   - provider: script # Run a custom deployment script which we will define below
-    script: yarn deploy:now
+    script: yarn deploy:vercel
     skip_cleanup: true
     on:
       branch: master

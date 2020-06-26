@@ -14,7 +14,7 @@
   "scripts": {
     "build:CRA": "yarn build:lib && cd examples/CRA && yarn build",
     "build:lib": "cd packages/lib && yarn build",
-    "deploy:now": "sh deploy.sh",
+    "deploy:vercel": "sh deploy.sh",
     "dev:CRA": "cd examples/CRA && yarn start",
     "dev:lib": "cd packages/lib && yarn dev",
     "dev:next": "cd examples/next && yarn dev",

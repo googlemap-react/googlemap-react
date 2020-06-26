@@ -5,11 +5,11 @@ cd examples/CRA && \
 cp .env.sample .env
 sed 's@YOUR GOOGLE MAP API KEY@'${GOOGLE_API_KEY}'@' -i .env
 yarn build && \
-cp now.json build && \
+cp vercel.json build && \
 cd build && \
-now --prod --token $NOW_TOKEN --yes && \
+vercel --prod --token $NOW_TOKEN --yes && \
 cd ../../../packages/lib && \
 yarn styleguide:build && \
-cp now.json styleguide && \
+cp vercel.json styleguide && \
 cd styleguide && \
-now --prod --token $NOW_TOKEN --yes
+vercel --prod --token $NOW_TOKEN --yes

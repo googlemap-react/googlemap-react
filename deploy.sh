@@ -7,9 +7,9 @@ sed 's@YOUR GOOGLE MAP API KEY@'${GOOGLE_API_KEY}'@' -i .env
 yarn build && \
 cp vercel.json build && \
 cd build && \
-vercel --prod --token $NOW_TOKEN --yes && \
+vercel --prod --token $NOW_TOKEN --confirm && \
 cd ../../../packages/lib && \
 yarn styleguide:build && \
 cp vercel.json styleguide && \
 cd styleguide && \
-vercel --prod --token $NOW_TOKEN --yes
+vercel --prod --token $NOW_TOKEN --confirm

@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react'
 import ReactDOMServer from 'react-dom/server'
-import uuid from 'uuid/v1'
+import {v1 as uuid} from 'uuid'
 import {useGoogleListener} from '../hooks'
 import {DEFAULT_SEARCH_BOX_OPTIONS} from '../common/constants'
 import {BasicSearchBoxProps} from '../common/types'

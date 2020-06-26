@@ -1,19 +1,19 @@
 import React from 'react'
 import {act} from 'react-dom/test-utils'
 import '@testing-library/jest-dom/extend-expect'
-import {render, wait} from '@testing-library/react'
+import {render, waitFor} from '@testing-library/react'
 import {GoogleMapProvider, MapBox, OverlayView} from '../../..'
 import {defineGlobalVariable} from '../../__test__helpers__'
 
 defineGlobalVariable()
 
 const mockOverlayDraw = async (container: HTMLElement) => {
-  await wait(() => {
+  await waitFor(() => {
     expect(container.innerHTML).not.toMatch('Loading...')
   })
 
   // wait for mocked onAdd to be triggered
-  await wait(() => {
+  await waitFor(() => {
     expect(document.body.innerHTML).toMatch('This is an overlay')
   })
 }

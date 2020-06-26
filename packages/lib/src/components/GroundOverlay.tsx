@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react'
-import uuid from 'uuid/v1'
+import {v1 as uuid} from 'uuid'
 import {useGoogleListener} from '../hooks'
 import {DEFAULT_GROUND_OVERLAY_OPTIONS} from '../common/constants'
 import {GroundOverlayProps} from '../common/types'

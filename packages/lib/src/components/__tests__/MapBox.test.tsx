@@ -1,7 +1,7 @@
 import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
 import loadjs from 'loadjs'
-import {render, wait, act} from '@testing-library/react'
+import {render, waitFor, act} from '@testing-library/react'
 import {GoogleMapProvider, MapBox} from '../../..'
 import {defineGlobalVariable} from '../../__test__helpers__'
 
@@ -28,7 +28,7 @@ describe('MapBox', () => {
       </GoogleMapProvider>,
     )
     expect(container.innerHTML).toMatch('Loading...')
-    await wait(() => {
+    await waitFor(() => {
       expect(mockConsoleError).toHaveBeenCalledWith(
         'Unable to fetch Google Map sdk',
       )
@@ -44,7 +44,7 @@ describe('MapBox', () => {
       </GoogleMapProvider>,
     )
     expect(container.innerHTML).toMatch('Loading...')
-    await wait(() => {
+    await waitFor(() => {
       expect(container.innerHTML).not.toMatch('Loading...')
     })
     expect(loadjs.reset).not.toHaveBeenCalled()
@@ -69,7 +69,7 @@ describe('MapBox', () => {
       </GoogleMapProvider>,
     )
     expect(container.innerHTML).toMatch('Loading...')
-    await wait(() => {
+    await waitFor(() => {
       expect(container.innerHTML).not.toMatch('Loading...')
     })
     expect(loadjs.reset).not.toHaveBeenCalled()
@@ -82,7 +82,7 @@ describe('MapBox', () => {
       </GoogleMapProvider>,
     )
     expect(container.innerHTML).toMatch('Loading...')
-    await wait(() => {
+    await waitFor(() => {
       expect(container.innerHTML).not.toMatch('Loading...')
     })
   })
@@ -93,7 +93,7 @@ describe('MapBox', () => {
         <MapBox apiKey="FAKE_KEY" language="fr" region="FR" />
       </GoogleMapProvider>,
     )
-    await wait(() => {
+    await waitFor(() => {
       expect(container.innerHTML).not.toMatch('Loading...')
     })
   })

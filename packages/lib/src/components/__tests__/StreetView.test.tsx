@@ -1,6 +1,6 @@
 import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
-import {cleanup, render, wait, act} from '@testing-library/react'
+import {cleanup, render, waitFor, act} from '@testing-library/react'
 import {GoogleMapProvider, MapBox, StreetView} from '../../..'
 import {defineGlobalVariable} from '../../__test__helpers__'
 
@@ -14,7 +14,7 @@ describe('StreetView', () => {
         <StreetView />
       </GoogleMapProvider>,
     )
-    await wait(() => {
+    await waitFor(() => {
       expect(container.innerHTML).not.toMatch('Loading...')
     })
     act(() =>

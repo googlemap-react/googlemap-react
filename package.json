@@ -6,10 +6,10 @@
   "author": "Gabriel Wu <qqbbnease1004@126.com>",
   "license": "MIT",
   "devDependencies": {
-    "husky": "3.1.0",
-    "lerna": "3.19.0",
-    "lint-staged": "9.5.0",
-    "prettier": "1.19.1"
+    "husky": "4.2.5",
+    "lerna": "3.22.1",
+    "lint-staged": "10.2.11",
+    "prettier": "2.0.5"
   },
   "scripts": {
     "build:CRA": "yarn build:lib && cd examples/CRA && yarn build",

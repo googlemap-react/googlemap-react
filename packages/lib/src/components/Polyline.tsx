@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react'
-import uuid from 'uuid/v1'
+import {v1 as uuid} from 'uuid'
 import {DEFAULT_POLYLINE_OPTIONS} from '../common/constants'
 import {PolylineProps} from '../common/types'
 import {GoogleMapContext} from '../contexts/GoogleMapContext'

@@ -1,6 +1,6 @@
 import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
-import {render, wait, cleanup, act} from '@testing-library/react'
+import {render, waitFor, cleanup, act} from '@testing-library/react'
 import {GoogleMapProvider, MapBox, Autocomplete} from '../../..'
 import {defineGlobalVariable} from '../../__test__helpers__'
 
@@ -14,7 +14,7 @@ describe('Autocomplete', () => {
         <Autocomplete bindingPosition="TOP_CENTER" />
       </GoogleMapProvider>,
     )
-    await wait(() => {
+    await waitFor(() => {
       expect(container.innerHTML).not.toMatch('Loading...')
     })
     act(() => {

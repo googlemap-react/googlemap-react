@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react'
-import uuid from 'uuid/v1'
+import {v1 as uuid} from 'uuid'
 import {
   DEFAULT_MAP_STYLE,
   DEFAULT_STREET_VIEW_OPTIONS,

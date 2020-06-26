@@ -1,7 +1,7 @@
 import React from 'react'
 import {act} from 'react-dom/test-utils'
 import '@testing-library/jest-dom/extend-expect'
-import {render, wait, cleanup} from '@testing-library/react'
+import {render, waitFor, cleanup} from '@testing-library/react'
 import {GoogleMapProvider, KmlLayer, MapBox} from '../../..'
 import {defineGlobalVariable} from '../../__test__helpers__'
 
@@ -15,7 +15,7 @@ describe('KmlLayer', () => {
         <KmlLayer />
       </GoogleMapProvider>,
     )
-    await wait(() => {
+    await waitFor(() => {
       expect(container.innerHTML).not.toMatch('Loading...')
     })
     act(() =>
@@ -41,7 +41,7 @@ describe('KmlLayer', () => {
           <KmlLayer id="kml-layer" />
         </GoogleMapProvider>,
       )
-      await wait(() => {
+      await waitFor(() => {
         expect(container.innerHTML).not.toMatch('Loading...')
       })
     }

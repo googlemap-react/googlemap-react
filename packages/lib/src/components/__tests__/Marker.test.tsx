@@ -1,7 +1,7 @@
 import React from 'react'
 import {act} from 'react-dom/test-utils'
 import '@testing-library/jest-dom/extend-expect'
-import {render, wait, cleanup} from '@testing-library/react'
+import {render, waitFor, cleanup} from '@testing-library/react'
 import {GoogleMapProvider, MapBox, Marker} from '../../..'
 import {defineGlobalVariable} from '../../__test__helpers__'
 
@@ -16,7 +16,7 @@ describe('Marker', () => {
       </GoogleMapProvider>,
     )
     expect(container.innerHTML).toMatch('Loading...')
-    await wait(() => {
+    await waitFor(() => {
       expect(container.innerHTML).not.toMatch('Loading...')
     })
   })
@@ -28,7 +28,7 @@ describe('Marker', () => {
         <Marker opts={{position: {lat: 39, lng: 116}}} />
       </GoogleMapProvider>,
     )
-    await wait(() => {
+    await waitFor(() => {
       expect(container.innerHTML).not.toMatch('Loading...')
     })
     act(() =>
@@ -60,7 +60,7 @@ describe('Marker', () => {
           <Marker id="marker" />
         </GoogleMapProvider>,
       )
-      await wait(() => {
+      await waitFor(() => {
         expect(container.innerHTML).not.toMatch('Loading...')
       })
     }

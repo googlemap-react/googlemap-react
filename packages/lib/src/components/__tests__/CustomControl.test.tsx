@@ -1,6 +1,6 @@
 import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
-import {render, cleanup, wait, act} from '@testing-library/react'
+import {render, cleanup, waitFor, act} from '@testing-library/react'
 import {CustomControl, GoogleMapProvider, MapBox} from '../../..'
 import {defineGlobalVariable} from '../../__test__helpers__'
 
@@ -17,7 +17,7 @@ describe('CustomControl', () => {
       </GoogleMapProvider>,
     )
 
-    await wait(() => {
+    await waitFor(() => {
       expect(container.innerHTML).not.toMatch('Loading...')
     })
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import {act} from 'react-dom/test-utils'
 import '@testing-library/jest-dom/extend-expect'
-import {render, wait, cleanup} from '@testing-library/react'
+import {render, waitFor, cleanup} from '@testing-library/react'
 import {GoogleMapProvider, MapBox, Polyline} from '../../..'
 import {defineGlobalVariable} from '../../__test__helpers__'
 
@@ -15,7 +15,7 @@ describe('Polyline', () => {
         <Polyline />
       </GoogleMapProvider>,
     )
-    await wait(() => {
+    await waitFor(() => {
       expect(container.innerHTML).not.toMatch('Loading...')
     })
     act(() =>
@@ -45,7 +45,7 @@ describe('Polyline', () => {
           <Polyline id="polyline" />
         </GoogleMapProvider>,
       )
-      await wait(() => {
+      await waitFor(() => {
         expect(container.innerHTML).not.toMatch('Loading...')
       })
     }

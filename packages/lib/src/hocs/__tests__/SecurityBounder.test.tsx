@@ -1,6 +1,6 @@
 import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
-import {render, cleanup, wait} from '@testing-library/react'
+import {render, cleanup, waitFor} from '@testing-library/react'
 import {GoogleMapProvider, MapBox, withSecurityBounder} from '../../..'
 import {defineGlobalVariable} from '../../__test__helpers__'
 import {HeatmapLayer} from '../../__test__helpers__/defineGlobalVariable'
@@ -25,7 +25,7 @@ describe('Security Bounder', () => {
       </GoogleMapProvider>,
     )
     expect(container.innerHTML).toMatch('Loading...')
-    await wait(() => {
+    await waitFor(() => {
       expect(container.innerHTML).not.toMatch('Loading...')
     })
 
@@ -36,9 +36,9 @@ describe('Security Bounder', () => {
           HeatmapLayer: HeatmapLayer,
         },
       })
-    }, 800)
+    }, 500)
 
-    await wait(() => {
+    await waitFor(() => {
       expect(container.innerHTML).toMatch('This is a heat map')
     })
   })

@@ -76,7 +76,7 @@ const MapBox = ({
     if (!loaded) return
     const stringifiedOpts = JSON.stringify(opts)
     const map = new google.maps.Map(
-      mapElementRef.current,
+      mapElementRef.current!!,
       JSON.parse(stringifiedOpts),
     )
     setMap(map)

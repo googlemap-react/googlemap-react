@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react'
 import ReactDOMServer from 'react-dom/server'
-import uuid from 'uuid/v1'
+import {v1 as uuid} from 'uuid'
 import {useGoogleListener, useMemoizedOptions} from '../hooks'
 import {DEFAULT_AUTOCOMPLETE_OPTIONS} from '../common/constants'
 import {BasicAutocompleteProps} from '../common/types'

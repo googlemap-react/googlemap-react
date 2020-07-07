@@ -65,6 +65,8 @@ describe('Marker', () => {
       })
     }
 
-    expect(check()).rejects.toEqual(new Error('The id has already been taken'))
+    await expect(check()).rejects.toThrow(
+      new Error('The id has already been taken'),
+    )
   })
 })

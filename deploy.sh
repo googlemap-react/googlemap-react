@@ -9,6 +9,8 @@ cp vercel.json build && \
 cd build && \
 vercel --prod --token $NOW_TOKEN --confirm && \
 cd ../../../packages/lib && \
+mv tsconfig.json tsconfig.noemit.json && \
+mv tsconfig.emit.json tsconfig.json && \
 yarn styleguide:build && \
 cp vercel.json styleguide && \
 cd styleguide && \

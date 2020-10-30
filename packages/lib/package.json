@@ -68,9 +68,8 @@
     "prepublish": "yarn build",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
-    "pretest": "rm -rf dist && cp tsconfig.json tsconfig.json.bak",
-    "test": "react-scripts test --env=jsdom",
-    "posttest": "rm tsconfig.json && mv tsconfig.json.bak tsconfig.json"
+    "pretest": "rm -rf dist",
+    "test": "react-scripts test --env=jsdom"
   },
   "eslintConfig": {
     "extends": "react-app",

@@ -33,34 +33,34 @@
   "umd": "dist/index.umd.js",
   "dependencies": {
     "loadjs": "^4.0.1",
-    "uuid": "^8.2.0"
+    "uuid": "^8.3.1"
   },
   "peerDependencies": {
     "react": "^16.8.0",
     "react-dom": "^16.8.0"
   },
   "devDependencies": {
-    "@babel/plugin-syntax-typescript": "7.10.4",
-    "@testing-library/jest-dom": "5.11.0",
-    "@testing-library/react": "10.4.4",
-    "@types/googlemaps": "3.39.8",
-    "@types/jest": "26.0.4",
+    "@babel/plugin-syntax-typescript": "7.12.1",
+    "@testing-library/jest-dom": "5.11.5",
+    "@testing-library/react": "11.1.0",
+    "@types/googlemaps": "3.40.3",
+    "@types/jest": "26.0.15",
     "@types/loadjs": "4.0.0",
-    "@types/node": "14.0.18",
-    "@types/react": "16.9.41",
-    "@types/react-dom": "16.9.8",
-    "@types/uuid": "8.0.0",
-    "@typescript-eslint/eslint-plugin": "3.6.0",
+    "@types/node": "14.14.6",
+    "@types/react": "16.9.55",
+    "@types/react-dom": "16.9.9",
+    "@types/uuid": "8.3.0",
+    "@typescript-eslint/eslint-plugin": "4.6.0",
     "eslint-plugin-prettier": "3.1.4",
-    "eslint-plugin-react-hooks": "4.0.5",
-    "microbundle": "0.12.2",
-    "react": "16.13.1",
-    "react-docgen-typescript": "1.18.0",
-    "react-dom": "16.13.1",
-    "react-scripts": "3.4.1",
-    "react-styleguidist": "11.0.8",
-    "ts-loader": "7.0.5",
-    "typescript": "3.9.6"
+    "eslint-plugin-react-hooks": "4.2.0",
+    "microbundle": "0.12.4",
+    "react": "17.0.1",
+    "react-docgen-typescript": "1.20.5",
+    "react-dom": "17.0.1",
+    "react-scripts": "4.0.0",
+    "react-styleguidist": "11.1.1",
+    "ts-loader": "8.0.7",
+    "typescript": "4.0.5"
   },
   "scripts": {
     "build": "cp ../../*.md . && rm -rf dist && microbundle --jsx React.createElement --strict && rm -rf .rts2_cache_*",
@@ -69,7 +69,7 @@
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
     "pretest": "rm -rf dist && cp tsconfig.json tsconfig.json.bak",
-    "test": "react-scripts test --env=jsdom-fourteen",
+    "test": "react-scripts test --env=jsdom",
     "posttest": "rm tsconfig.json && mv tsconfig.json.bak tsconfig.json"
   },
   "eslintConfig": {

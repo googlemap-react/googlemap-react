@@ -13,7 +13,10 @@
     "resolveJsonModule": true,
     "jsx": "react",
     "declaration": true,
-    "composite": true
+    "composite": true,
+    "isolatedModules": true,
+    "noFallthroughCasesInSwitch": true,
+    "noEmit": true
   },
   "include": ["src", "index.ts"],
   "exclude": ["src/**/__tests__", "src/__test__helpers__"],

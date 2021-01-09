@@ -98,7 +98,7 @@
       "!src/__test__helpers__/**"
     ]
   },
-  "gitHead": "923d80b549d54ebbb79877167b09892703ff234d",
+  "gitHead": "affdfc70b996e9d9b590ee04c0e3fd162ed6ca9d",
   "publishConfig": {
     "access": "public"
   }

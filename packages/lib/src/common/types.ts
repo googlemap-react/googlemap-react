@@ -187,11 +187,11 @@ export interface RectangleProps extends ShapeProps {
 
 // HeatMap
 
-export interface WeightedLatLng extends google.maps.LatLng {
+export interface WeightedLatLng extends google.maps.LatLngLiteral {
   weight?: number
 }
 export interface HeatmapLayerOptions
-  extends google.maps.visualization.HeatmapLayerOptions {
+  extends Omit<google.maps.visualization.HeatmapLayerOptions, 'data'> {
   data: WeightedLatLng[]
 }
 

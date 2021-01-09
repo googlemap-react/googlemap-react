@@ -33,7 +33,7 @@
   "umd": "dist/index.umd.js",
   "dependencies": {
     "loadjs": "^4.0.1",
-    "uuid": "^8.3.1"
+    "uuid": "^8.3.2"
   },
   "peerDependencies": {
     "react": "^16.8.0",
@@ -41,26 +41,26 @@
   },
   "devDependencies": {
     "@babel/plugin-syntax-typescript": "7.12.1",
-    "@testing-library/jest-dom": "5.11.5",
-    "@testing-library/react": "11.1.0",
-    "@types/googlemaps": "3.40.3",
-    "@types/jest": "26.0.15",
+    "@testing-library/jest-dom": "5.11.8",
+    "@testing-library/react": "11.2.3",
+    "@types/googlemaps": "3.43.1",
+    "@types/jest": "26.0.20",
     "@types/loadjs": "4.0.0",
-    "@types/node": "14.14.6",
-    "@types/react": "16.9.55",
-    "@types/react-dom": "16.9.9",
+    "@types/node": "14.14.20",
+    "@types/react": "17.0.0",
+    "@types/react-dom": "17.0.0",
     "@types/uuid": "8.3.0",
-    "@typescript-eslint/eslint-plugin": "4.6.0",
-    "eslint-plugin-prettier": "3.1.4",
+    "@typescript-eslint/eslint-plugin": "4.12.0",
+    "eslint-plugin-prettier": "3.3.1",
     "eslint-plugin-react-hooks": "4.2.0",
-    "microbundle": "0.12.4",
+    "microbundle": "0.13.0",
     "react": "17.0.1",
     "react-docgen-typescript": "1.20.5",
     "react-dom": "17.0.1",
-    "react-scripts": "4.0.0",
-    "react-styleguidist": "11.1.1",
-    "ts-loader": "8.0.7",
-    "typescript": "4.0.5"
+    "react-scripts": "4.0.1",
+    "react-styleguidist": "11.1.5",
+    "ts-loader": "8.0.14",
+    "typescript": "4.1.3"
   },
   "scripts": {
     "build": "cp ../../*.md . && rm -rf dist && microbundle --jsx React.createElement --strict && rm -rf .rts2_cache_*",

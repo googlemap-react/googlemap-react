@@ -15,7 +15,8 @@
     "declaration": true,
     "composite": true,
     "isolatedModules": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "noEmit": false
   },
   "include": ["src", "index.ts"],
   "exclude": ["src/**/__tests__", "src/__test__helpers__"],

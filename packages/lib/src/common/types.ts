@@ -91,19 +91,19 @@ export interface MapBoxProps {
   opts?: google.maps.MapOptions
   onBoundsChanged?: () => any
   onCenterChanged?: () => any
-  onClick?: (event: google.maps.MouseEvent) => any
-  onDoubleClick?: (event: google.maps.MouseEvent) => any
+  onClick?: (event: google.maps.MapMouseEvent) => any
+  onDoubleClick?: (event: google.maps.MapMouseEvent) => any
   onDrag?: () => any
   onDragEnd?: () => any
   onDragStart?: () => any
   onHeadingChanged?: () => any
   onIdle?: () => any
   onMapTypeIdChanged?: () => any
-  onMouseMove?: (event: google.maps.MouseEvent) => any
-  onMouseOut?: (event: google.maps.MouseEvent) => any
-  onMouseOver?: (event: google.maps.MouseEvent) => any
+  onMouseMove?: (event: google.maps.MapMouseEvent) => any
+  onMouseOut?: (event: google.maps.MapMouseEvent) => any
+  onMouseOver?: (event: google.maps.MapMouseEvent) => any
   onProjectionChanged?: () => any
-  onRightClick?: (event: google.maps.MouseEvent) => any
+  onRightClick?: (event: google.maps.MapMouseEvent) => any
   onTilesLoaded?: () => any
   onTiltChanged?: () => any
   onZoomChanged?: () => any
@@ -115,22 +115,22 @@ export interface MarkerProps {
   id?: string
   opts?: google.maps.MarkerOptions
   onAnimationChanged?: () => any
-  onClick?: (event: google.maps.MouseEvent) => any
+  onClick?: (event: google.maps.MapMouseEvent) => any
   onClickableChanged?: () => any
   onCursorChanged?: () => any
-  onDoubleClick?: (event: google.maps.MouseEvent) => any
-  onDrag?: (event: google.maps.MouseEvent) => any
-  onDragEnd?: (event: google.maps.MouseEvent) => any
+  onDoubleClick?: (event: google.maps.MapMouseEvent) => any
+  onDrag?: (event: google.maps.MapMouseEvent) => any
+  onDragEnd?: (event: google.maps.MapMouseEvent) => any
   onDraggableChanged?: () => any
-  onDragStart?: (event: google.maps.MouseEvent) => any
+  onDragStart?: (event: google.maps.MapMouseEvent) => any
   onFlatChanged?: () => any
   onIconChanged?: () => any
-  onMouseDown?: (event: google.maps.MouseEvent) => any
-  onMouseOut?: (event: google.maps.MouseEvent) => any
-  onMouseOver?: (event: google.maps.MouseEvent) => any
-  onMouseUp?: (event: google.maps.MouseEvent) => any
+  onMouseDown?: (event: google.maps.MapMouseEvent) => any
+  onMouseOut?: (event: google.maps.MapMouseEvent) => any
+  onMouseOver?: (event: google.maps.MapMouseEvent) => any
+  onMouseUp?: (event: google.maps.MapMouseEvent) => any
   onPositionChanged?: () => any
-  onRightClick?: (event: google.maps.MouseEvent) => any
+  onRightClick?: (event: google.maps.MapMouseEvent) => any
   onShapeChanged?: () => any
   onTitleChanged?: () => any
   onVisibleChanged?: () => any
@@ -154,16 +154,16 @@ export interface InfoWindowProps {
 
 interface ShapeProps {
   id?: string
-  onClick?: (event: google.maps.MouseEvent) => any
-  onDoubleClick?: (event: google.maps.MouseEvent) => any
-  onDrag?: (event: google.maps.MouseEvent) => any
-  onDragEnd?: (event: google.maps.MouseEvent) => any
-  onDragStart?: (event: google.maps.MouseEvent) => any
-  onMouseDown?: (event: google.maps.MouseEvent) => any
-  onMouseOut?: (event: google.maps.MouseEvent) => any
-  onMouseOver?: (event: google.maps.MouseEvent) => any
-  onMouseUp?: (event: google.maps.MouseEvent) => any
-  onRightClick?: (event: google.maps.MouseEvent) => any
+  onClick?: (event: google.maps.MapMouseEvent) => any
+  onDoubleClick?: (event: google.maps.MapMouseEvent) => any
+  onDrag?: (event: google.maps.MapMouseEvent) => any
+  onDragEnd?: (event: google.maps.MapMouseEvent) => any
+  onDragStart?: (event: google.maps.MapMouseEvent) => any
+  onMouseDown?: (event: google.maps.MapMouseEvent) => any
+  onMouseOut?: (event: google.maps.MapMouseEvent) => any
+  onMouseOver?: (event: google.maps.MapMouseEvent) => any
+  onMouseUp?: (event: google.maps.MapMouseEvent) => any
+  onRightClick?: (event: google.maps.MapMouseEvent) => any
 }
 
 export interface PolylineProps extends ShapeProps {
@@ -177,7 +177,7 @@ export interface PolygonProps extends ShapeProps {
 export interface CircleProps extends ShapeProps {
   opts?: google.maps.CircleOptions
   onCenterChanged?: () => any
-  onRadiusChanged?: (event: google.maps.MouseEvent) => any
+  onRadiusChanged?: (event: google.maps.MapMouseEvent) => any
 }
 
 export interface RectangleProps extends ShapeProps {
@@ -187,7 +187,7 @@ export interface RectangleProps extends ShapeProps {
 
 // HeatMap
 
-export interface WeightedLatLng extends google.maps.LatLngLiteral {
+export interface WeightedLatLng extends google.maps.LatLng {
   weight?: number
 }
 export interface HeatmapLayerOptions
@@ -224,7 +224,7 @@ export interface StreetViewProps {
   className?: string
   style?: React.CSSProperties
   opts?: google.maps.StreetViewPanoramaOptions
-  onCloseClick?: (event: google.maps.MouseEvent) => any
+  onCloseClick?: (event: google.maps.MapMouseEvent) => any
   onPanoChanged?: () => any
   onPositionChanged?: () => any
   onPovChanged?: () => any
@@ -265,8 +265,8 @@ export interface GroundOverlayOptions {
 export interface GroundOverlayProps {
   id?: string
   opts?: GroundOverlayOptions
-  onClick?: (event: google.maps.MouseEvent) => any
-  onDoubleClick?: (event: google.maps.MouseEvent) => any
+  onClick?: (event: google.maps.MapMouseEvent) => any
+  onDoubleClick?: (event: google.maps.MapMouseEvent) => any
 }
 
 // Autocomplete
